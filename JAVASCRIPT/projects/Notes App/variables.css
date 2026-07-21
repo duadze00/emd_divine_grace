@@ -1,0 +1,7 @@
+:root {
+  --primary: rgb(221, 239, 238);
+  --border-shadow: 0 0 3px rgba(221, 239, 238, 0.5);
+  --transparent: rgba(0, 0, 0, 0.3);
+  --white: #fff;
+  --md-border-radius: 10px;
+}

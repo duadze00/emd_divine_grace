@@ -1,0 +1,117 @@
+h1 {
+  background-color: red;
+  opacity: 0.5;
+}
+p {
+  background: rgba(0, 128, 0, 0.3);
+}
+.image {
+  width: 200px;
+  height: 200px;
+  color: white;
+  background-image: url(/images/be.jpg);
+  background-size: cover;
+}
+.img {
+  margin-top: 1rem;
+  width: 200px;
+  height: 200px;
+  background-image: url(/images/be2.jpg);
+}
+.img {
+  background-repeat: no-repeat;
+}
+.img {
+  background-position: right top;
+}
+.img {
+  background-attachment: fixed;
+}
+
+/* ============== Other background-repeat values ============ */
+/* 
+1. repeat-y
+2. repeat-x
+*/
+
+.img {
+  background-size: cover;
+}
+
+/* ============= background-size values =========== */
+/* 
+1. center
+2. contain
+*/
+
+/* 
+NB. Always set the background-image, background-repeat,  background-position, background-image-size all on one element. Like below
+*/
+.img {
+  background-image: url("/images/be2.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+  background-size: cover;
+}
+/* GOOD PRACTICE */
+
+/* ============= BACKGROUND SHORTHAND ============= */
+#images {
+  margin-top: 1rem;
+  width: 200px;
+  height: 200px;
+  background: url("/images/778370.jpg") no-repeat center/ cover;
+}
+
+/* ========= MULTIPLE BACKGROUND IMAGES ========= */
+.bg {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-size: contain;
+  background-position: right bottom,left top;
+  background-repeat: no-repeat, repeat;
+  background-origin: padding-box; /* border-box and content-box */
+  background-clip: border-box; /* padding-box and content-box */
+}
+
+/* ========= MULTIPLE BACKGROUND IMAGES SHORTHAND ========= */
+#example1 {
+  background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+}
+
+/* Define Sizes of Multiple Background Images */
+#example1 {
+  background: url(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+  background-size: 50px, 130px, auto;
+}
+
+/* Full Size Background Image */
+html {
+  background: url(img_man.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+/* Hero Image */
+.hero-image {
+  background: url(img_man.jpg) no-repeat center;
+  background-size: cover;
+  height: 500px;
+  position: relative;
+}
+
+article {
+  background-color: navy; /* Set background color */
+  background-image: url(/images/778370.jpg); /* Specify the url for the background image */
+  background-repeat: no-repeat; /* Should the image repeat or not */
+  background-size: cover; /* Specify the size of a background-image (auto,contain) */
+  background-position: center; /* Specify the position of the background image */
+  background-attachment: auto; /* Specifies whether the background image should scroll or be fixed */
+  background-clip: border-box; /* Defines how the background should extend within an element (padding-box, content-box) */
+  background-origin: border-box; /* Specifies the origin position of a background image */
+}
+/* NB. The order matters */
+
+/* Background Shorthand */
+article {
+  background: url("/images/adwoa.jpg") no-repeat cover;
+}

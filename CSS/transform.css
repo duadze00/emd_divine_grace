@@ -1,0 +1,126 @@
+/* =============== 2D TTRANSFORM METHODS =============== */
+/* 
+With transform property you can use the ff:
+1. translate()
+2. rotate()
+3. scaleX()
+4. scaleY()
+5. scale()
+6. skewX()
+7. skewY()
+8. skew()
+9. matrix()
+*/
+
+/* The translate() Method */
+div {
+  height: 50px;
+  width: 50px;
+  border: solid 1px;
+}
+.original {
+  background: rgba(250, 0, 0, 0.5);
+}
+.transform {
+  background: rgba(250, 0, 0);
+  transform: translate(10px, -20px);
+}
+
+/* The rotate() Method */
+div {
+  transform: rotate(20deg);
+}
+
+/* The scale() Method */
+div {
+  transform: scale(2, 3);
+}
+
+/* The scaleX() Method */
+div {
+  transform: scaleX(2);
+}
+
+/* The scaleY() Method */
+div {
+  transform: scaleY(3);
+}
+
+/* The skewX() Method */
+div {
+  transform: skewX(20deg);
+}
+
+/* The skewY() Method */
+div {
+  transform: skew(20deg, 10deg);
+}
+div {
+  transform: skew(20deg);
+}
+
+/* The matrix() Method */
+/* The matrix() method combines all the 2D transform methods into one. */
+/* The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()). */
+div {
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+/* Transform-origin Property */
+/* The transform-origin property allows you to change the position of transformed elements. */
+div {
+  transform: rotate(45deg);
+  transform-origin: 20% 40%;
+}
+
+/* =============== 3D TTRANSFORM METHODS =============== */
+/* 
+With the CSS transform property you can use the following 3D transformation methods:
+1. The y-axis (rotateY()) 
+2. The x-axis (rotateX())
+3. The z-axis (rotateZ())
+*/
+#myDiv {
+  transform: rotateX(150deg);
+}
+#myDiv {
+  transform: rotateY(150deg);
+}
+#myDiv {
+  transform: rotateZ(90deg);
+}
+
+/* Transform-origin Property */
+div {
+  transform: rotate(45deg);
+  transform-origin: 20% 40% 20%;/* initial, inherit */
+}
+
+/* Transform-style Property */
+div {
+  transform: rotateY(60deg);
+  transform-style: preserve-3d; /* flat, initial, inherit */
+}
+
+/* Perspective Property */
+#div1 {
+  perspective: 100px;
+}
+
+/* Perspective-origin Property */
+#div1 {
+  perspective: 100px;
+  perspective-origin: left;
+}
+
+/* Backface-visibility Property */
+#div1 {
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+#div2 {
+  -webkit-backface-visibility: visible; /* Safari */
+  backface-visibility: visible;
+}
+
+/* Read more on transform. */

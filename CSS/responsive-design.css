@@ -1,0 +1,208 @@
+/* ============== RULES FOR RESPONSIVE DESIGN ============== */
+/*
+1. Design for different screen sizes, not devices. 
+      Don’t think: “iPhone vs laptop”
+      Think: “small width vs medium vs large”
+      
+2. Always designs for mobile first.
+      Start with smallest screens, then scale up.
+      Why:
+          1. Mobile has the most constraints
+          2. Easier to add than to remove styles
+
+3. Use flexible units, not fixed sizes.
+      Avoid:
+          width: 500px;
+      Use:
+          width: 100%;
+          max-width: 500px;
+    Common responsive units:
+        1. % → relative to parent
+        2. vw / vh → viewport size
+        3. rem → scalable text
+        4. fr → Grid layouts
+
+4. Use Layout Systems Properly.
+      This is where Grid + Flexbox come in.
+          1. Grid → structure (2D)
+          2. Flexbox → alignment (1D)
+
+          Eg. 
+          .container {
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+
+          @media (min-width: 768px) {
+            .container {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+
+5. Breakpoints Should Be Content-Based.
+      Don’t copy random breakpoints. Add a breakpoint when your layout breaks.
+
+6. Let Content Flow (Don’t Fight It).
+      Avoid forcing layouts.
+          Instead of:
+            height: 400px;
+          Use:
+            min-height: 400px;
+
+      Content should grow naturally.
+
+7. Make Images & Media Responsive
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      Prevents overflow and distortion.
+
+8. Use Wrapping (Flexbox Superpower)
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      Items move to next line automatically.
+
+9. Prioritize Readability
+      1. Line length: ~50–75 characters
+      2. Don’t shrink text too much
+      3. Keep spacing consistent
+
+10. Performance = Responsiveness too
+        1. Optimize images
+        2. Avoid heavy layouts
+        3. Reduce unnecessary CSS/JS
+      A slow site is NOT responsive.
+
+11. Test Different Scenarios
+      Check:
+          Small phones
+          Tablets
+          Large screens
+          Zoom (very important)
+          Orientation (portrait/landscape)
+
+12. Use Modern Responsive Tools
+    🔹 Clamp (dynamic sizing)
+        font-size: clamp(1rem, 2vw, 2rem);
+    Text scales smoothly between sizes.
+    🔹 Auto-fit Grid (powerful)
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    Creates responsive layouts WITHOUT media queries.
+    🔹 Container Queries (pro level)
+      Instead of screen size:
+        Respond to the container size
+
+13. Pro Mindset (This is what matters most)
+    A professional doesn’t ask:
+        “What breakpoint should I use?”
+    They ask:
+        “When does this layout stop working?”
+*/
+
+/* ================== REAL WORLD STRATEGIES ================== */
+/*
+    1. Build mobile layout
+    2. Add flexibility (%, flex, grid)
+    3. Stretch screen slowly
+    4. When it breaks → add breakpoint
+    5. Repeat
+*/
+
+/* ================== COMMON MISTAKES TO AVOID ================== */
+/* 
+    1. Using too many breakpoints
+    2. Fixed widths everywhere
+    3. Ignoring small screens
+    4. Overusing Grid for everything
+    5. Designing desktop first
+*/
+
+/* ================== SIMPLE CHEAT SHEET ================== */
+/* 
+1. Mobile first 
+2. Flexible units 
+3. Grid for layout 
+3. Flexbox for alignment 
+4. Content decides breakpoints 
+*/
+
+/* ============== BREAKPOINTS FOR DEVICES ============== */
+/* Base styles (mobile first) */
+.container {
+  padding: 10px;
+}
+
+/* When layout needs more space */
+@media (min-width: 700px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Bigger screens */
+@media (min-width: 1000px) {
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+/* ================== BREAKPOINTS TYPES ================== */
+/* 1. Content-based breakpoints */
+@media (min-width: 680px) {
+}
+@media (min-width: 920px) {
+}
+
+/* 2. Let Grid reduce breakpoints */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* 3. Use clamp for fluid scaling */
+p {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+/* ================== SIMPLE RULE FOR BREAKPOINTS ================== */
+/* 
+    1. Start with 0 breakpoints
+    1. Stretch screen
+    3. Add breakpoint only when needed 
+*/
+
+/* ================== RESPONSIVE WEB DESIGN - IMAGES ================== */
+/* Responsive Web Design - Images */
+/* Using The width Property */
+/* If the width property is set to a percentage and the height property is set to "auto", the image will be responsive and scale up and down: */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Using The max-width Property */
+/* If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size: */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================== RESPONSIVE WEB DESIGN - VIDEOS ================== */
+/* Using The width Property */
+/* If the width property is set to 100%, the video player will be responsive and scale up and down: */
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* Using The max-width Property */
+/* If the max-width property is set to 100%, the video player will scale down if it has to, but never scale up to be larger than its original size. */
+video {
+  max-width: 100%;
+  height: auto;
+}

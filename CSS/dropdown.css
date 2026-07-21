@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+/* ===================== ONE ===================== */
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* ===================== TWO ===================== */
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0.25rem;
+  width: 200px;
+  gap: 0.5rem;
+  margin: 2rem auto;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem;
+  position: relative;
+}
+.child__image {
+  width: 20px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.gt {
+  position: absolute;
+  right: 0.25rem;
+}
+.gt button {
+  background-color: inherit;
+  border: none;
+}
+.child:hover {
+  background-color: rgb(219, 219, 216);
+  border-radius: 5px;
+}
+.side {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px white;
+  padding: 0.25rem;
+  position: absolute;
+  right: 200px;
+  display: none;
+}
+li {
+  list-style: none;
+  line-height: 1.6;
+}
+.side a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 0 0.25rem;
+}
+.side a:hover {
+  border-radius: 5px;
+  background-color: rgb(146, 144, 144);
+}
+.show_side:hover .side {
+  display: block;
+}
+
+/* ===================== THREE ===================== */
+.parent {
+  position: relative;
+  width: 200px;
+  margin: 2rem auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.parent button {
+  background-color: maroon;
+  color: white;
+  padding: 1rem;
+  border: none;
+  display: inline-block;
+  margin: auto;
+  cursor: pointer;
+  width: 100%;
+}
+.parent button:hover {
+  background-color: rgb(177, 0, 0);
+}
+.dropdown__items {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  z-index: 1000;
+}
+.dropdown__items a {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+}
+.dropdown__items a:hover {
+  background-color: #e4e4e4;
+}
+.parent:hover .dropdown__items {
+  display: block;
+}
+p.below {
+  margin: 2rem;
+}
+/* NB. Position is set on parent and child element for other element to treat them like they exist */

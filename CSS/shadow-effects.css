@@ -1,0 +1,78 @@
+/* TEXT SHADOW */
+h1 {
+  text-shadow: 2px 2px green;
+}
+h2 {
+  text-shadow: 3px 3px 5px blue;
+}
+h3 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* MULTIPLE SHADOWS */
+.multiple {
+  text-shadow:
+    0 0 3px #ff0000,
+    0 0 5px #0000ff;
+}
+
+h1 {
+  color: white;
+  text-shadow:
+    1px 1px 2px black,
+    0 0 25px blue,
+    0 0 5px darkblue;
+}
+
+.without {
+  color: yellow;
+  text-shadow:
+    -1px 0 black,
+    0 1px black,
+    1px 0 black,
+    0 -1px black;
+}
+
+/* BOX SHADOW */
+div {
+  height: 100px;
+  width: 300px;
+  background: yellow;
+  box-shadow: 10px 10px;
+}
+p:first-child {
+  text-align: center;
+}
+
+/* Add color */
+div {
+  box-shadow: 10px 10px grey;
+}
+
+/* Add blur (The third pixel value) */
+div {
+  box-shadow: 10px 10px 5px grey;
+  margin-bottom: 2rem;
+}
+
+/* Spread (The fourth pixel value) */
+div.card {
+  width: 250px;
+  margin: auto;
+  height: auto;
+  background: white;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+div.card:nth-last-of-type(1) {
+  margin-top: 6rem;
+}
+img {
+  width: inherit;
+}
+p {
+  padding: 1rem;
+}

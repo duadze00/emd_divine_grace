@@ -1,0 +1,49 @@
+/* CSS combinator selectors are used to select elements based on their relationship with other elements. */
+
+/* They help you target elements depending on: 
+1. parent/child relationships
+2. siblings
+3. descendants
+*/
+
+/* There are 4 main combinator selectors in CSS */
+
+/* =============================== 1. DESCENDANT SELECTOR (space) =============================== */
+/* This selects elements INSIDE another element, no matter how deep. */
+/* Syntax: parent child */
+.descendant-selector-container p {
+  color: red;
+}
+nav a {
+  text-decoration: none;
+}
+
+/* =============================== 2. CHILD SELECTOR (>) =============================== */
+/* This selects ONLY direct children. */
+/* Syntax: parent > child */
+.child-selector-container > p {
+  color: blue;
+}
+.card > h2 {
+  font-size: 2rem;
+}
+
+/* =============================== 3. ADJACENT SIBLING SELECTOR (+) =============================== */
+/* Selects the NEXT immediate sibling. */
+/* Syntax: parent + child */
+h1.adjacent-sibling-selector + p {
+  color: magenta;
+}
+label + input {
+  margin-top: 10px;
+}
+
+/* =============================== 4. GENERAL SIBLING SELECTOR (~) =============================== */
+/* Selects ALL siblings after an element. */
+/* Syntax: parent ~ child */
+h1.general-sibling-selector ~ p {
+  color: #e36f11;
+}
+input:checked ~ .menu {
+  display: block;
+}

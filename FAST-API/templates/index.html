@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}Home - ShopFast{% endblock %} {%
+block content %}
+<div class="container">
+  <h2>Available Products</h2>
+
+  <div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+      <img src="{{ product.image_url }}" alt="Product" class="product-img" />
+      <div class="product-content">
+        <h3 class="product-title">{{ product.title }}</h3>
+        <p class="product-price">${{ product.price }}</p>
+        <a
+          href="/products/{{ product.id }}"
+          class="btn btn-primary"
+          style="margin-top: auto"
+          >View Details</a
+        >
+      </div>
+    </div>
+    {% else %}
+    <p
+      style="
+        color: var(--text-muted);
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 3rem;
+      "
+    >
+      No products listed yet. Be the first to sell something!
+    </p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

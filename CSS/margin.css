@@ -1,0 +1,55 @@
+:root {
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin-top: 50px;
+}
+h2 {
+  margin-bottom: 40px;
+}
+h3 {
+  margin-left: 30px;
+}
+h4 {
+  margin-right: 60px;
+}
+
+/* ======= MARGIN SHORTHAND ======= */
+h5 {
+  margin: 70px;
+}
+h6 {
+  margin: 40px 50px;
+}
+.margin {
+  margin: 30px 50px 70px;
+}
+div {
+  border: solid 4px green;
+  margin: 30px 50px 70px 90px;
+}
+
+/* Margin: auto; align block element horizontally. */
+.me {
+  width: 300px;
+  margin: auto;
+  border: solid 2px;
+}
+
+/* Margin-left and margin-right with the value of auto align item horizontally and vertically with display of block */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.parent {
+  border: solid 2px blue;
+  margin-right: 100px;
+}
+.parent p {
+  border: solid 1px red;
+  margin-left: inherit;
+}

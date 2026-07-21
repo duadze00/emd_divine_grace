@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Form</title>
+    <link rel="stylesheet" href="dark-mode.css" />
+  </head>
+  <body>
+    <main>
+      <form>
+        <header>
+          <h1>Create Account Here</h1>
+        </header>
+        <div class="form-group">
+          <label for="username">Name</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="useremail">Email</label>
+          <input
+            type="email"
+            id="useremail"
+            name="useremail"
+            placeholder="www.example@gmail.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="userpassword">Password</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="userpassword"
+              name="userpassword"
+              placeholder="Password"
+              required
+            />
+            <i>👁️</i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Confirm Password"
+              required
+            />
+            <i>👁️</i>
+          </div>
+        </div>
+
+        <button type="submit">Submit</button>
+        <footer>
+          &copy; <span id="year"></span> <span id="brand">EMD</span> Divine
+          Grace. All Rights Reserved.
+        </footer>
+      </form>
+    </main>
+
+    <script src="dark-mode.js"></script>
+  </body>
+</html>

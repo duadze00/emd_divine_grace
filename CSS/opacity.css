@@ -1,0 +1,70 @@
+img {
+  width: 200px;
+  display: block;
+  margin-bottom: 50px;
+}
+
+/* ========== OPACITY ======== */
+img:nth-of-type(1) {
+  opacity: 0.3;
+}
+img:nth-of-type(2) {
+  opacity: 0.5;
+}
+img:nth-of-type(3) {
+  opacity: 1; /* Default */
+}
+img:nth-of-type(4) {
+  opacity: 0; /* Image will not show but is there */
+}
+img.eric {
+  opacity: 0.5;
+}
+img.eric:hover {
+  opacity: 1;
+}
+div:nth-of-type(2) {
+  width: 90%;
+  background: green;
+  height: 100px;
+  margin: auto;
+  opacity: 1;
+}
+div:nth-of-type(3) {
+  width: 90%;
+  background: green;
+  height: 100px;
+  margin: auto;
+  opacity: 0.7;
+}
+div:nth-of-type(4) {
+  width: 90%;
+  background: green;
+  height: 100px;
+  margin: auto;
+  opacity: 0.3;
+}
+
+div.background {
+  background: url("/images/778370.jpg") no-repeat center/cover;
+  border: 2px solid black;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+/* ======= USING RGBA TO CONTROL OPACITY ========= */
+div.me{
+  background: rgba(76, 175, 80, 0.3) /* Green background with 30% opacity */
+}

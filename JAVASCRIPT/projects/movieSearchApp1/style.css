@@ -1,0 +1,326 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0f172a; /* Dark sleek background */
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   2. HEADER & SEARCH BAR
+   ========================================================================== */
+header {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+h1 {
+  color: #38bdf8; /* Accent light blue */
+  font-size: 1.8rem;
+}
+
+#search-form {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
+  color: white;
+  font-size: 1rem;
+}
+
+#search-input:focus {
+  outline: 2px solid #38bdf8;
+}
+
+#search-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#search-form button:hover {
+  background-color: #0ea5e9;
+}
+
+/* ==========================================================================
+   3. LAYOUT (CSS GRID FOR RESPONSIVENESS)
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+  width: 100%;
+}
+
+/* 
+   Requirement Check: Responsive layout with CSS Grid.
+   repeat(auto-fill, minmax(220px, 1fr)) creates automatic row-wrapping 
+   without needing heavy media queries!
+*/
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* ==========================================================================
+   4. MOVIE CARD STYLES
+   ========================================================================== */
+.movie-card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  background-color: #334155;
+}
+
+.movie-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Requirement Check: Display Year Separately */
+.movie-year {
+  color: #94a3b8;
+}
+
+/* Requirement Check: Display Vote Average (Rating) */
+.movie-rating {
+  background-color: #0f172a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Dynamic color coding for ratings */
+.rating-green {
+  color: #22c55e;
+}
+.rating-orange {
+  color: #f97316;
+}
+.rating-red {
+  color: #ef4444;
+}
+
+/* ==========================================================================
+   5. LOADING SPINNER
+   ========================================================================== */
+.spinner-container {
+  display: none; /* Injected/Controlled via JS */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #334155;
+  border-top: 5px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   6. PAGINATION
+   ========================================================================== */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.pagination-container button {
+  padding: 0.6rem 1.2rem;
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pagination-container button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-container button:not(:disabled):hover {
+  background-color: #334155;
+  border-color: #38bdf8;
+}
+
+/* ==========================================================================
+   7. MODAL OVERLAY & POPUP (More Details)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.85); /* Frosty backdrop tint */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background-color: #1e293b;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+/* Layout structural split inside modal details */
+.modal-detail-flex {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.modal-poster {
+  width: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.modal-info-pane {
+  flex: 1;
+  min-width: 250px;
+}
+
+.modal-info-pane h2 {
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.modal-overview {
+  margin: 1rem 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Helper Utilities */
+.hidden {
+  display: none !important;
+}
+.message-container {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin: 2rem 0;
+}

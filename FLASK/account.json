@@ -1,0 +1,44 @@
+{
+    "duadze00@gmail.com": {
+        "email": "duadze00@gmail.com",
+        "firstname": "Eric",
+        "surname": "Duadze",
+        "password": "1234",
+        "course": "programming"
+    },
+    "duadze@gmail.com": {
+        "email": "duadze@gmail.com",
+        "firstname": "Eric",
+        "surname": "Duadze",
+        "password": "1234",
+        "course": "programming"
+    },
+    "duadz@gmail.com": {
+        "email": "duadz@gmail.com",
+        "firstname": "Eric",
+        "surname": "Duadze",
+        "password": "1",
+        "course": "design"
+    },
+    "abi@gmail.com": {
+        "email": "abi@gmail.com",
+        "firstname": "Abigail",
+        "surname": "Agyapong",
+        "password": "1",
+        "course": "sonography"
+    },
+    "a@a.com": {
+        "email": "a@a.com",
+        "firstname": "Angel",
+        "surname": "A",
+        "password": "1",
+        "course": "design"
+    },
+    "emma@gmail.com": {
+        "email": "emma@gmail.com",
+        "firstname": "Emmanuel",
+        "surname": "Mensah",
+        "password": "1",
+        "course": "programming"
+    }
+}

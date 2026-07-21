@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+/* form {
+  display: flex;
+  flex-direction: column;
+} */
+
+input[type="text"]:focus {
+  background-color: lightblue;
+  border: 3px solid #555;
+  width: 100%;
+}
+input[type="text"] {
+  background-color: #3cbc8d;
+  color: white;
+  background-image: url("/images/Artboard\ 1.jpg");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 40px;
+  transition: width 0.4s ease-in-out;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none; /* The resize property does not the textarea resize at refresh or form submitted. */
+}
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Tip: use width: 100% for full-width buttons */

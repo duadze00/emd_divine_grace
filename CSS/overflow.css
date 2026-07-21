@@ -1,0 +1,17 @@
+.overflow {
+  background-color: green;
+  height: 200px;
+  overflow: hidden;
+  overflow: visible;
+  overflow: scroll;
+  overflow: auto;
+}
+.one {
+  height: 60px;
+  background: red;
+  overflow-x: auto;
+}
+.one {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+}

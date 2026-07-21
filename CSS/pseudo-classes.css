@@ -1,0 +1,131 @@
+/* ======== SYNTAX OF PSEUDO-CLASSES ========= */
+selector:pseudo-class {
+  @property: value;
+}
+
+/* Anchor Pseudo-classes */
+/* unvisited link */
+a:link {
+  color: #ff0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00ff00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ff00ff;
+}
+
+/* selected link */
+a:active {
+  color: #0000ff;
+}
+
+/* Simple Tooltip Hover */
+p.me {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+div:hover p.me {
+  display: block;
+}
+
+/* The :only-child Pseudo-class */
+p:only-child {
+  color: green;
+}
+
+/* The :first-child Pseudo-class */
+p:first-child {
+  color: green;
+}
+
+/* The :last-child Pseudo-class */
+p:last-child {
+  color: green;
+}
+
+/* The :nth-last-child(n) Pseudo-class */
+p:nth-last-child(2) {
+  color: green;
+}
+
+/* The :last-of-type Pseudo-class */
+p:last-of-type {
+  color: green;
+}
+
+/* The :last-of-type(n) Pseudo-class */
+p:last-of-type(2) {
+  color: green;
+}
+
+/* The :nth-child(n) Pseudo-class */
+p:nth-child(2) {
+  color: green;
+}
+p:nth-child(odd) {
+  color: green;
+}
+p:nth-child(even) {
+  color: brown;
+}
+
+/* The :nth-of-type(n) Pseudo-class */
+p:nth-of-type(2) {
+  color: green;
+}
+
+/* The :first-of-type Pseudo-class */
+p:first-of-type {
+  color: green;
+}
+
+/* The :first-of-type() Pseudo-class */
+n p:first-of-type(2) {
+  color: green;
+}
+
+/* ======== SYNTAX OF PSEUDO-ELEMENT ========= */
+selector::pseudo-element {
+  @property: value;
+}
+
+/* The ::first-line Pseudo-element */
+p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+
+/* The ::first-letter Pseudo-element */
+p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+/* The ::before Pseudo-element */
+h1::before {
+  content: url(smiley.gif);
+}
+
+/* The ::after Pseudo-element */
+h1::after {
+  content: url(smiley.gif);
+}
+
+/* The ::marker Pseudo-element */
+::marker {
+  color: red;
+  font-size: 23px;
+}
+
+/* The ::selection Pseudo-element */
+::selection {
+  color: red;
+  background: yellow;
+}

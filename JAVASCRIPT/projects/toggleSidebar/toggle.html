@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/toggle.css" />
+    <script src="toggle.js" defer></script>
+    <title>EMD App</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="logo">EMD</div>
+
+        <!-- Hamburger button -->
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </nav>
+    </header>
+
+    <!-- Overlay (dark background when menu opens) -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <ul>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+      </ul>
+    </aside>
+
+    <main></main>
+    <footer></footer>
+  </body>
+</html>

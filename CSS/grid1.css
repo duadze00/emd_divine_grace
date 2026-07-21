@@ -1,0 +1,161 @@
+/* ======================== USE GRID WHEN YOUR LAYOUT IS TWO DIMENSIONAL (ROWS AND COLUMNS) ======================== */
+/* 
+Example:
+1. Full website layout (header, sidebar, main, footer)
+2. Dashboards
+3. Image galleries with rows + columns
+*/
+
+/* ======================== ROOT ELEMENT ======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================== DEFINING GRID CONTAINER AND ALIGNING GRID ITEMS WITH GRID CONTAINER ======================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  /* justify-items: center; */
+  /* align-items: center; */
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+/* ======================== GRID ITEMS ======================== */
+.grid-items {
+  background: blueviolet;
+  text-align: center;
+  color: white;
+}
+
+/* ======================== PLACING GRID ITEM(S) ======================== */
+.grid-items:nth-child(8) {
+  /* This moves grid-item 8 to row1 and column3 */
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+/* ======================== SPANNING GRID ITEM(S) ======================== */
+.grid-items:nth-child(1) {
+  grid-row: 1 / span 3;
+}
+.grid-items:nth-child(3) {
+  grid-column: 2 / span 2;
+}
+
+/* ======================== ALIGNING GRID ITEM(S) ======================== */
+.grid-items {
+  /* NB. These override the grid-container alignment */
+  align-self: auto;
+  justify-self: auto;
+}
+
+/* ======================== GRID ITEM ORDER ======================== */
+.grid-items:nth-child(7) {
+  /* Use number for precise positioning */
+  grid-area: 4/3/5/4; /* Meaning: row-start/column-start/row-end/column-end/ */
+}
+
+/* ======================== USING GRID-TEMPLATE-AREA ======================== */
+/* This defines how many to span by repeating values */
+/* GRID CONTAINER */
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: 80px 1fr 60px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  gap: 10px;
+  padding: 10px;
+}
+
+/* ITEMS */
+.header {
+  grid-area: header;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.main {
+  grid-area: main;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  grid-area: footer;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+/* ============================== TIP FOR RESPONSIVE GRID DESIGN ============================*/
+/* Use this for responsive columns */
+.parent-container-one {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* 
+minmax(200px, 1fr)
+  This means:
+    Each column must be:
+      1. at least 200px
+      2. at most 1fr (share available space equally)
+  So:
+    1. It will NOT shrink below 200px
+    2. It can grow to fill space
+
+auto-fit
+  This means:
+    “Create as many columns as will fit in the container”
+  So the browser asks:
+    “How many 200px columns can I fit here?”
+  Then it automatically creates them.
+*/
+
+/* 
+clamp(1rem, 2vw, 2rem)
+  This is used for responsive sizing (usually font sizes, padding, margins).
+    font-size: clamp(1rem, 2vw, 2rem);
+  It means:
+    “The size should stay between a minimum, an ideal, and a maximum.”
+ */
+
+/* 
+1. 1rem → MINIMUM
+Never go smaller than this.
+2. 2vw → IDEAL (fluid value)
+vw = viewport width
+2vw = 2% of screen width
+3. 2rem → MAXIMUM
+Never grow beyond this.
+
+clamps = Automatically adapts across all screens
+ */

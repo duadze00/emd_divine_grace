@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Notes App</title>
+  </head>
+
+  <body>
+    <main>
+      <!-- Search and Add Note -->
+      <header id="container">
+        <label id="search-container">
+          <i class="fa-solid fa-magnifying-glass icon"></i>
+          <input
+            type="text"
+            id="search"
+            placeholder="Search"
+            autocomplete="off"
+          />
+        </label>
+
+        <button id="add-note" type="button">+</button>
+      </header>
+
+      <!-- Add/Edit Note -->
+      <section id="parent-container">
+        <div id="back">
+          <button id="back-btn" type="button">←</button>
+          <button id="save-btn" type="button">Save</button>
+        </div>
+
+        <div id="inputs-container">
+          <input
+            type="text"
+            id="note-title"
+            name="note-title"
+            placeholder="Title"
+            autocomplete="off"
+          />
+
+          <textarea
+            id="note"
+            name="note"
+            placeholder="Note something down"
+            rows="10"
+          ></textarea>
+        </div>
+      </section>
+
+      <!-- Notes -->
+      <section>
+        <ul id="notes-container"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

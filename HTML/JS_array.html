@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="content"></p>
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+    <p id="demo"></p>
+    <h1></h1>
+    <script src="../JAVASCRIPT/arrays.js"></script>
+    <script>
+      const points1 = [40, 100, 1, 5, 25, 10];
+      document.getElementById("demo").innerHTML = points1;
+
+      function myFunction1() {
+        points1.sort();
+        document.getElementById("demo").innerHTML = points1;
+      }
+
+      function myFunction2() {
+        points1.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("demo").innerHTML = points1;
+      }
+    </script>
+  </body>
+</html>

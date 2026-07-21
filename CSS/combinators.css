@@ -1,0 +1,26 @@
+/* DESCENDANT SELECTOR */
+/* Selects all <p> elements inside <div> elements */
+div p {
+  background: url("/images/778370.jpg") no-repeat center/cover;
+  width: 200px;
+  height: 200px;
+  color: white;
+}
+
+/* CHILD SELECTOR (>)*/
+/* Selects all <p> elements where the parent is a <div> element */
+div > p {
+  color: green;
+}
+
+/* ADJACENT SIBLING SELECTOR (+) */
+/* Selects the first <p> element that are placed immediately after <div> elements */
+div + p {
+  color: purple;
+}
+
+/* GENERAL SIBLING SELECTOR (~) */
+/* Selects every <div> element that are preceded by a <p> element */
+div ~ p {
+  color: rgb(255, 94, 0);
+}

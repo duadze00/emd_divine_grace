@@ -1,0 +1,55 @@
+/* COUNTER */
+/* 
+Properties:
+1. counter-reset = Creates and reset a counter.
+2. counter-increment = Increment counter value.
+3. counter() or counters() = Adds the value of a counter to an element.
+4. content = Insert generated content.
+*/
+body {
+  counter-reset: section;
+}
+
+h2::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+/* NESTING COUNTERS */
+body {
+  counter-reset: section;
+}
+
+h1 {
+  counter-reset: subsection;
+}
+
+h2 {
+  counter-reset: anothersubsection;
+}
+
+h1::before {
+  counter-increment: section;
+  content: "Section " counter(section) ". ";
+}
+
+h2::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+
+h3::before {
+  counter-increment: subsection;
+  content: counter(subsection) ". " counter(anothersubsection) " ";
+}
+
+/* LIST */
+ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+}

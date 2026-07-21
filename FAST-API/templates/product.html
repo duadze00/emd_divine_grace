@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}{{ product.title }} - ShopFast{%
+endblock %} {% block content %}
+<div class="container">
+  <div class="product-detail-container">
+    <div>
+      <img
+        src="{{ product.image_url }}"
+        alt="{{ product.title }}"
+        style="width: 100%; border-radius: 8px"
+      />
+    </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      "
+    >
+      <div>
+        <h1 style="margin-bottom: 0.5rem">{{ product.title }}</h1>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem">
+          Listed by: SellerUsername
+        </p>
+
+        <h2
+          class="product-price"
+          style="font-size: 2rem; margin-bottom: 1.5rem"
+        >
+          ${{ product.price }}
+        </h2>
+
+        <h3 style="margin-bottom: 0.5rem">Product Info</h3>
+        <p style="margin-bottom: 2rem; color: var(--text-muted)">
+          {{ product.description }}
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem">
+        <form action="/products/{{ product.id }}/buy" method="POST">
+          <button type="submit" class="btn btn-accent">
+            Buy Now (Instantly Claims Item)
+          </button>
+        </form>
+
+        <div
+          style="
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            margin-top: 1rem;
+          "
+        >
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--danger);
+              margin-bottom: 0.5rem;
+              font-weight: 600;
+            "
+          >
+            Seller / Admin Controls:
+          </p>
+          <form action="/products/{{ product.id }}/delete" method="POST">
+            <button type="submit" class="btn btn-danger" style="width: 100%">
+              Delete Listing Permanent
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

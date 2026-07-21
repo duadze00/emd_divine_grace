@@ -1,0 +1,112 @@
+#notes-container {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 18px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#notes-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.note-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #202124;
+  margin: 0;
+  line-height: 1.4;
+
+  /* Prevents titles from blowing up card height */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.note-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#notes-container:hover .note-actions {
+  opacity: 1;
+}
+
+.note-actions button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5f6368;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.note-actions button:hover {
+  background-color: #f1f3f4;
+}
+
+.pin-btn:hover {
+  color: #f4b400;
+}
+
+.edit-btn:hover {
+  color: #1a73e8;
+}
+
+.delete-btn:hover {
+  color: #d93025;
+}
+
+.note-details {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+  white-space: pre-wrap;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #f1f3f4;
+  padding-top: 10px;
+}
+
+.created-at {
+  font-size: 0.75rem;
+  color: #80868b;
+  font-weight: 500;
+}

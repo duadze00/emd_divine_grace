@@ -1,0 +1,59 @@
+/* ====================================================================================================
+   CSS SCROLLBAR CHEAT SHEET
+   ====================================================================================================
+   Feature / Property | WebKit                                | W3C Standard (Modern)
+   -------------------|---------------------------------------|----------------------
+   Target Browsers    | Chrome, Safari, Edge, iOS, Opera      | Firefox, Newer Chromium
+   Track Color        | ::-webkit-scrollbar-track {bg: X;}    | scrollbar-color: Y X; (2nd)
+   Thumb Color        | ::-webkit-scrollbar-thumb {bg: Y;}    | scrollbar-color: Y X; (1st)
+   Sizing             | ::-webkit-scrollbar { width: 8px; }   | scrollbar-width: thin; (Keywords only)
+   Hover States       | Supported (:hover)                    | Not natively supported
+   ==================================================================================================== */
+
+/* Target your scroll container here (e.g., body, .scroll-box, or #transaction-list) */
+#transaction-list {
+  /* 1. COMPONENT STRUCTURAL SETUP */
+  overflow-y: auto; /* Only show vertical scrollbar when content overflows */
+  overflow-x: hidden; /* Prevent unwanted horizontal layout shifting */
+
+  /* 2. ADVANCED INTERACTION & UX (Not in the original screenshot) */
+  scroll-behavior: smooth; /* Enables smooth scrolling animations */
+  overscroll-behavior: contain; /* Traps scroll inside this container; stops parent page scroll-chaining */
+  scrollbar-gutter: stable; /* Reserves space for scrollbar layout to prevent jumping/shifting bugs */
+
+  /* 3. MODERN W3C STANDARD STYLING (Firefox & Modern Engines) */
+  scrollbar-width: thin; /* Options: auto | thin | none */
+  scrollbar-color: #cbd5e1 #f1f1f1; /* Syntax: [Thumb Color] [Track Color] */
+}
+
+/* 4. WEBKIT LEGACY STYLING (Chrome, Safari, Edge, iOS) - From Screenshot_20260704-210945.jpg */
+
+/* Container wrapper for the scrollbar structural system */
+#transaction-list::-webkit-scrollbar {
+  width: 8px; /* Width applied to vertical scrollbars */
+  height: 8px; /* Height applied to horizontal scrollbars */
+}
+
+/* The structural track path underlying the draggable thumb */
+#transaction-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* The actual draggable handle representing viewport position */
+#transaction-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+  /* Pro-Tip: Adding a border matching the track creates a simulated inner padding */
+  border: 2px solid #f1f1f1;
+}
+
+/* Interactive hover state change */
+#transaction-list::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8; /* darkens handle for actionable visual feedback */
+}
+
+/* Active click/dragging feedback state */
+#transaction-list::-webkit-scrollbar-thumb:active {
+  background-color: #64748b; /* Deepens color while being actively dragged */
+}

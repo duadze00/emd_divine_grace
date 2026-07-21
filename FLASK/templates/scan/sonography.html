@@ -1,0 +1,116 @@
+{% extends "scan/sonography_base.html" %} {% block sonography_content %}
+<link rel="stylesheet" href="{{url_for('static', filename='sonography.css')}}">
+<h1 class="title">Sonography Learning Hub</h1>
+
+<p class="subtitle">
+  Welcome to your structured ultrasound learning system. Select a module to
+  explore detailed concepts, clinical applications, and diagnostic techniques.
+</p>
+
+<div class="overview-grid">
+  <div class="card">
+    <h3>Ultrasound Physics</h3>
+    <p>
+      Learn the foundation of ultrasound imaging including wave behavior,
+      transducers, beam formation, and image generation principles.
+    </p>
+    <ul>
+      <li>Sound wave properties</li>
+      <li>Beam geometry</li>
+      <li>Pulse physics</li>
+      <li>Image formation</li>
+    </ul>
+    <a href="{{url_for('ultrasound')}}" class="btn">Start Learning</a>
+  </div>
+
+  <div class="card">
+    <h3>Obstetrics</h3>
+    <p>
+      Covers fetal development, biometry, pregnancy assessment, and Doppler
+      evaluation of fetal circulation.
+    </p>
+    <ul>
+      <li>Fetal growth</li>
+      <li>Placenta assessment</li>
+      <li>Umbilical artery Doppler</li>
+      <li>Fetal anomalies</li>
+    </ul>
+    <a href="{{url_for('obstetrics')}}" class="btn">Start Learning</a>
+  </div>
+
+  <div class="card">
+    <h3>Gynecology</h3>
+    <p>
+      Imaging of the female reproductive system including uterus, ovaries, and
+      pelvic pathology evaluation.
+    </p>
+    <ul>
+      <li>Uterine anatomy</li>
+      <li>Ovarian cysts</li>
+      <li>Fibroids</li>
+      <li>Infertility workup</li>
+    </ul>
+    <a href="{{url_for('gynecology')}}" class="btn">Start Learning</a>
+  </div>
+
+  <div class="card">
+    <h3>Abdominal Ultrasound</h3>
+    <p>
+      Evaluation of abdominal organs including liver, kidneys, pancreas,
+      gallbladder, and spleen.
+    </p>
+    <ul>
+      <li>Liver pathology</li>
+      <li>Renal system</li>
+      <li>Gallstones</li>
+      <li>Pancreatic disease</li>
+    </ul>
+    <a href="{{url_for('abdominal')}}" class="btn">Start Learning</a>
+  </div>
+
+  <div class="card">
+    <h3>Small Parts</h3>
+    <p>
+      Focus on superficial structures like thyroid, breast, testes, and lymph
+      nodes.
+    </p>
+    <ul>
+      <li>Thyroid nodules</li>
+      <li>Breast lesions</li>
+      <li>Scrotal pathology</li>
+      <li>Soft tissue masses</li>
+    </ul>
+    <a href="{{url_for('smallparts')}}" class="btn">Start Learning</a>
+  </div>
+
+  <div class="card">
+    <h3>Doppler Studies</h3>
+    <p>
+      Analysis of blood flow using spectral, color, and power Doppler in
+      arterial, venous, and obstetric systems.
+    </p>
+    <ul>
+      <li>Arterial waveforms</li>
+      <li>Venous Doppler</li>
+      <li>Obstetric Doppler</li>
+      <li>Flow indices</li>
+    </ul>
+    <a href="{{url_for('doppler')}}" class="btn">Start Learning</a>
+  </div>
+
+  <div class="card">
+    <h3>Musculoskeletal</h3>
+    <p>
+      Imaging of muscles, tendons, joints, and vascular waveforms with clinical
+      interpretation.
+    </p>
+    <ul>
+      <li>Tendon injuries</li>
+      <li>Muscle tears</li>
+      <li>Joint effusion</li>
+      <li>Waveforms</li>
+    </ul>
+    <a href="{{url_for('musculoskeletal')}}" class="btn">Start Learning</a>
+  </div>
+</div>
+{%endblock%}

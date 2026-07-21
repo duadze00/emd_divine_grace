@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block body %}
+<nav style="display: flex; justify-content: space-between; align-items: center">
+  <a href="{{ url_for('ultrasound') }}">Ultrasound Physics</a>
+  <a href="{{ url_for('gynecology') }}">Gynecology</a>
+  <a href="{{ url_for('obstetrics') }}">Obstetrics</a>
+  <a href="{{ url_for('abdominal') }}">Abdomen</a>
+  <a href="{{ url_for('smallparts') }}">Small Parts</a>
+  <a href="{{ url_for('doppler') }}">Doppler Studies</a>
+  <a href="{{ url_for('musculoskeletal') }}">Musculoskeletal</a>
+</nav>
+<main>{% block sonography_content %}{% endblock %}</main>
+{% endblock %}

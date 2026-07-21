@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quiz Application</title>
+  </head>
+  <body>
+    <main>
+      <!-- Start Screen -->
+      <div class="screen active" id="start-screen">
+        <h1>Quiz Time!</h1>
+        <p>Test your knowledge with these fun questions</p>
+        <button id="start-btn">Start Quiz</button>
+      </div>
+
+      <!-- Quiz Interface Screen -->
+      <div class="screen" id="quiz-screen">
+        <h3 id="question"></h3>
+        <div id="quiz-info">
+          <p>
+            Question <span id="current-question"></span> of
+            <span id="total-question"></span>
+          </p>
+          <p>Score: <span id="score"></span></p>
+        </div>
+        <div id="answer-container">
+          <!-- Dynamically populated via JS script operations -->
+        </div>
+        <div id="progress-bar">
+          <div id="progress"></div>
+        </div>
+      </div>
+
+      <!-- Results Screen Summary -->
+      <div class="screen" id="result-screen">
+        <h1>Quiz Result</h1>
+        <p>
+          Score <span id="total-score"></span> out of <span id="total"></span>
+        </p>
+        <button id="restart-quiz">Restart Quiz</button>
+      </div>
+    </main>
+
+    <!-- TODO: There are three different scripts for this project to learn. -->
+    <script type="module" src="script1.js"></script>
+  </body>
+</html>

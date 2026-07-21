@@ -1,0 +1,88 @@
+div {
+  border: solid 2px green;
+  width: 200px;
+  height: 200px;
+  margin: 1rem 0;
+}
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73ad21;
+}
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73ad21;
+}
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: green;
+  border: 2px solid #4caf50;
+}
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73ad21;
+}
+
+/* NB. Static elements are not affected by top, left, right and bottom */
+div.static {
+  position: static;
+  border: 3px solid #73ad21;
+}
+.parent {
+  border: solid 2px red;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1; /* Element should be front or back. */
+}
+.rela {
+  border: solid 2px magenta;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 100px;
+}
+.abs {
+  border: solid 2px purple;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.stick {
+  border: solid 2px black;
+  width: 100px;
+  height: 100px;
+  position: sticky;
+  bottom: 10px;
+}
+.fix {
+  border: solid 2px red;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.stat {
+  border: solid 2px blue;
+  width: 100px;
+  height: 100px;
+  position: static;
+}
+
+/* =========== Overlapping Elements =========== */
+/* z-index used to place and element behind or infront of other elements. */
+img {
+  z-index: -1;
+}

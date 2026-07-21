@@ -1,0 +1,25 @@
+#container {
+  display: flex;
+  gap: 1rem;
+}
+
+#search-container {
+  display: flex;
+  flex: 1;
+}
+
+#search-container .icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+#search-container #search {
+  flex: 1;
+  border-radius: 9999px;
+}
+
+button#add-note {
+  border-radius: var(--md-border-radius);
+  padding: 1rem;
+}

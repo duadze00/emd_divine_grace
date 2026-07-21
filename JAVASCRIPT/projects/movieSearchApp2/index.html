@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search App</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <!-- ==========================================
+           HEADER SECTION
+           ========================================== -->
+      <header class="header">
+        <h1 class="title">Movie Search</h1>
+        <p class="subtitle">
+          Search for your favourite movies or browse popular titles.
+        </p>
+      </header>
+
+      <!-- ==========================================
+           SEARCH FORM SECTION
+           ========================================== -->
+      <section class="search-section">
+        <form id="search-form">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search movie..."
+            autocomplete="off"
+          />
+          <button type="submit" id="search-btn">Search</button>
+        </form>
+      </section>
+
+      <!-- ==========================================
+           FEEDBACK & MESSAGES
+           ========================================== -->
+      <section id="loading" hidden aria-live="polite">
+        <div class="spinner"></div>
+        <p>Loading movies...</p>
+      </section>
+
+      <section id="message" aria-live="polite"></section>
+
+      <!-- ==========================================
+           MOVIE GRID & INFINITE SCROLL SENTINEL
+           ========================================== -->
+      <section id="movies" class="movies-grid"></section>
+
+      <!-- Infinite Scroll Trigger Sentinel -->
+      <div id="scroll-sentinel" aria-hidden="true"></div>
+
+      <!-- Loading Indicator for Infinite Scroll -->
+      <div id="load-more" hidden>
+        <div class="spinner"></div>
+      </div>
+
+      <!-- ==========================================
+           MOVIE DETAILS MODAL
+           ========================================== -->
+      <section id="movie-modal" class="modal" hidden>
+        <div
+          class="modal-content"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <button
+            id="modal-close"
+            class="modal-close"
+            aria-label="Close movie details"
+          >
+            &times;
+          </button>
+
+          <div id="modal-body">
+            <!-- Dynamic movie details will be inserted here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Application Logic -->
+    <script src="script.js"></script>
+  </body>
+</html>

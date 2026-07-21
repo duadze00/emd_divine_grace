@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block body %}
+<nav style="display: flex; justify-content: space-between; align-items: center">
+  <a href="{{ url_for('musculoskeletal') }}">Musculoskeletal</a>
+  <a href="{{ url_for('dvt') }}">Deep Vein Thrombus</a>
+  <a href="{{ url_for('aterial') }}">Aterial Doppler</a>
+  <a href="{{ url_for('venous') }}">Venous Doppler</a>
+  <a href="{{ url_for('waveforms') }}">Waveforms Interpretation</a>
+</nav>
+<main>{% block msk_content %}{% endblock %}</main>
+{% endblock %}

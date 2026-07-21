@@ -1,0 +1,19 @@
+div {
+  border: solid 10px red;
+  outline-style: solid;
+  outline-color: blue;
+  outline-width: 15px;
+  outline-offset: 5px;
+}
+/* ===== OUTLINE SHORTHAND ===== */
+p.outline {
+  border: solid 10px red;
+  outline: 15px solid green;
+}
+p.offset{
+  margin: 30px;
+  background: yellow;
+  border: 1px solid black;
+  outline: 1px solid red;
+  outline-offset: 15px;
+}

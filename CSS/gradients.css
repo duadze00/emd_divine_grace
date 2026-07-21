@@ -1,0 +1,122 @@
+/* ============== RADIAL GRADIENT ============== */
+/*background-image: radial-gradient(shape size at position, start-color, ..., last-color);  */
+
+/* Radial Gradient - Evenly Spaced Color Stops (this is default) */
+#grad {
+  background-image: radial-gradient(red, yellow, green);
+}
+
+/* Radial Gradient - Differently Spaced Color Stops */
+#grad {
+  background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+/* Set Shape */
+#grad {
+  background-image: radial-gradient(circle, red, yellow, green);
+}
+
+/* Use of Different Size Keywords */
+#grad1 {
+  background-image: radial-gradient(
+    closest-side at 60% 55%,
+    red,
+    yellow,
+    black
+  );
+}
+#grad2 {
+  background-image: radial-gradient(
+    farthest-side at 60% 55%,
+    red,
+    yellow,
+    black
+  );
+}
+#grad1 {
+  background-image: radial-gradient(
+    closest-corner at 60% 55%,
+    red,
+    yellow,
+    black
+  );
+}
+#grad2 {
+  background-image: radial-gradient(
+    farthest-corner at 60% 55%,
+    red,
+    yellow,
+    black
+  );
+}
+
+/* Repeating a radial-gradient */
+#grad {
+  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+
+/* Using Angle */
+#radial {
+  height: 200px;
+  width: 200px;
+  background: radial-gradient(white, red, black);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ============== LINEAR GRADIENT ============== */
+/* background-image: linear-gradient(direction, color-stop1, color-stop2, ...);  */
+
+/* Direction - Top to Bottom (Default) */
+#grad {
+  background-image: linear-gradient(red, yellow);
+}
+
+/* Direction - Left to Right */
+#grad {
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+/* Direction - Diagonal */
+#grad {
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+/* Using Angles */
+.linear {
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(25deg, blue, green);
+}
+
+/* Using Multiple Color Stops */
+#grad {
+  background-image: linear-gradient(red, yellow, green);
+}
+
+#grad {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+
+/* Using Transparency */
+#grad {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  );
+}
+
+/* Repeating a linear-gradient */
+#grad {
+  background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+}

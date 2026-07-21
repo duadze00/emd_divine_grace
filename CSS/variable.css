@@ -1,0 +1,79 @@
+/* CSS Variables - The var() Function */
+/* The var() function is used to insert the value of a CSS variable. */
+/* var(--name, value) */
+/* 
+1. name	= Required. The variable name (must start with two dashes)
+2. value =	Optional. The fallback value (used if the variable is not found)
+*/
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+body {
+  background-color: var(--blue);
+}
+
+h2 {
+  border-bottom: 2px solid var(--blue);
+}
+
+button {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
+
+/* Overriding variable */
+button {
+  --blue: #0000ff;
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
+
+/* Creating new local variable */
+button {
+  --button-blue: #0000ff;
+  background-color: var(--white);
+  color: var(--button-blue);
+  border: 1px solid var(--button-blue);
+  padding: 5px;
+}
+
+/* Changing Variable with Javascript */
+/* Go the variable html script tag */
+
+/* Using Variables in Media Queries */
+/* Variable declarations */
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+.container {
+  --fontsize: 25px;
+}
+
+/* Styles */
+body {
+  background-color: var(--blue);
+}
+
+h2 {
+  border-bottom: 2px solid var(--blue);
+}
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+  font-size: var(--fontsize);
+}
+
+@media screen and (min-width: 450px) {
+  .container {
+    --fontsize: 50px;
+  }
+}

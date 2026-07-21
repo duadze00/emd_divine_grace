@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %}Register - ShopFast{% endblock %} {%
+block content %}
+<div class="container">
+  <div class="form-card">
+    <h2>Create an Account</h2>
+    <form action="/auth/register" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          required
+          placeholder="Choose a unique username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          required
+          placeholder="you@example.com"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          required
+          placeholder="Create a strong password"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-accent"
+        style="width: 100%; margin-top: 1rem"
+      >
+        Register Account
+      </button>
+    </form>
+    <p
+      style="
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      "
+    >
+      Already have an account?
+      <a href="/auth/login" style="color: var(--primary)">Login here</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

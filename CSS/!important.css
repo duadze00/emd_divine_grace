@@ -1,0 +1,31 @@
+/* !IMPORTANT */
+/* The !important rule in CSS is used to add more importance to a property/value than normal. */
+
+p {
+  background-color: red !important;
+}
+
+#myid {
+  background-color: blue;
+}
+
+.myclass {
+  background-color: gray;
+}
+
+/* ONLY WAY TO OVERIDE !IMPORTANT RULE */
+/* Add another one */
+#myid {
+  background-color: blue !important;
+}
+
+.myclass {
+  background-color: gray !important;
+}
+
+p {
+  background-color: red !important;
+}
+/* With the above code each selector will have it own property because the !important is added. */
+
+/* Tip: It is good to know about the !important rule, you might see it in some CSS source code. However, do not use it unless you absolutely have to. */

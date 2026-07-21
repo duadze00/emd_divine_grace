@@ -1,0 +1,50 @@
+/* CSS [ATTRIBUTE] SELECTOR */
+a[target] {
+  background-color: yellow;
+}
+
+/* CSS [ATTRIBUTE="VALUE"] SELECTOR */
+a[target="_blank"] {
+  background-color: yellow;
+}
+
+/* CSS [ATTRIBUTE~="VALUE"] SELECTOR */
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+
+/* CSS [ATTRIBUTE|="VALUE"] SELECTOR */
+[class|="top"] {
+  background: yellow;
+}
+
+/* CSS [ATTRIBUTE^="VALUE"] SELECTOR */
+[class^="top"] {
+  background: yellow;
+}
+
+/* CSS [ATTRIBUTE$="VALUE"] SELECTOR */
+[class$="test"] {
+  background: yellow;
+}
+
+/* CSS [ATTRIBUTE*="VALUE"] SELECTOR */
+[class*="te"] {
+  background: yellow;
+}
+
+/* Example of using css attribute selector style  a form */
+input[type="text"] {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: magenta;
+}
+
+input[type="button"] {
+  width: 120px;
+  margin-left: 35px;
+  display: block;
+}
+
+/* NB. Attribute selectors are very useful when styling forms */

@@ -1,0 +1,178 @@
+/* Display Property */
+/* An HTML element becomes a grid container when its display property is set to grid or inline-grid. */
+.grid-container {
+  display: grid; /* inline-grid */
+}
+
+/* You can adjust the gap size by using one of the following properties:
+1. grid-column-gap
+2. grid-row-gap
+3. grid-gap
+ */
+
+/* The grid-column-gap property sets the gap between the columns: */
+.grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+}
+
+/* The grid-row-gap property sets the gap between the rows: */
+.grid-container {
+  display: grid;
+  grid-row-gap: 50px;
+}
+
+/* The grid-gap property is a shorthand property for the grid-row-gap and the grid-column-gap properties */
+.grid-container {
+  display: grid;
+  grid-gap: 50px 100px;
+  grid-gap: 50px;
+}
+
+/* Grid Lines */
+/* The lines between columns are called column lines. */
+/* The lines between rows are called row lines. */
+
+/* Place a grid item at column line 1, and let it end on column line 3 */
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* Place a grid item at row line 1, and let it end on row line 3 */
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+/* The grid-template-columns Property */
+/* The grid-template-columns property defines the number of columns in your grid layout, and it can define the width of each column. */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+/* The grid-template-columns property can also be used to specify the size (width) of the columns. */
+.grid-container {
+  display: grid;
+  grid-template-columns: 80px 200px auto 40px;
+}
+
+/* The grid-template-rows Property */
+/* The grid-template-rows property defines the height of each row. */
+.grid-container {
+  display: grid;
+  grid-template-rows: 80px 200px;
+}
+
+/* The justify-content Property */
+/* The justify-content property is used to align the whole grid inside the container. */
+.grid-container {
+  display: grid;
+  justify-content: space-evenly; /* space-around, space-between, center, start, end */
+}
+
+/* The align-content Property */
+/* The align-content property is used to vertically align the whole grid inside the container. */
+.grid-container {
+  display: grid;
+  height: 400px;
+  align-content: center; /* space-around, space-between, start, end, space-evenly*/
+}
+
+/* Grid Item */
+/* The grid-column Property */
+/* The grid-column property defines on which column(s) to place an item. */
+
+/* Note: The grid-column property is a shorthand property for the grid-column-start and the grid-column-end properties. */
+
+/* To place an item, you can refer to line numbers, or use the keyword "span" to define how many columns the item will span. */
+.item1 {
+  grid-column: 1 / 5;
+}
+.item1 {
+  grid-column: 1 / span 3;
+}
+.item2 {
+  grid-column: 2 / span 3;
+}
+
+/* The grid-row Property */
+/* The grid-row property defines on which row to place an item. */
+
+/* Note: The grid-row property is a shorthand property for the grid-row-start and the grid-row-end properties. */
+.item1 {
+  grid-row: 1 / 4;
+}
+.item1 {
+  grid-row: 1 / span 2;
+}
+
+/* The grid-area Property */
+
+/* The grid-area property can be used as a shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties. */
+
+/* Make "item8" start on row-line 1 and column-line 2, and end on row-line 5 and column line 6 */
+.item8 {
+  grid-area: 1 / 2 / 5 / 6;
+}
+/* Make "item8" start on row-line 2 and column-line 1, and span 2 rows and 3 columns */
+.item8 {
+  grid-area: 2 / 1 / span 2 / span 3;
+}
+
+/* Naming Grid Items */
+/* The grid-area property can also be used to assign names to grid items. */
+
+/* Named grid items can be referred to by the grid-template-areas property of the grid container. */
+/* Item1 gets the name "myArea" and spans all five columns in a five columns grid layout */
+.item1 {
+  grid-area: myArea;
+}
+.grid-container {
+  grid-template-areas: "myArea myArea myArea myArea myArea";
+}
+
+.item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: main;
+}
+.item4 {
+  grid-area: right;
+}
+.item5 {
+  grid-area: footer;
+}
+
+.grid-container {
+  grid-template-areas:
+    "header header header header header header"
+    "menu main main main right right"
+    "menu footer footer footer footer footer";
+}
+
+/* The Order of the Items */
+.item1 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.item2 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.item3 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.item4 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.item5 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.item6 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+

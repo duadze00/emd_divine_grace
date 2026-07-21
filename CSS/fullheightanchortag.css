@@ -1,0 +1,24 @@
+/* Padding should not be set on the parent container */
+div {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 3em;
+}
+
+/* Set the anchor element to be flex or block */
+a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  background-color: black;
+  color: white;
+}

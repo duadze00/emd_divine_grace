@@ -1,0 +1,34 @@
+div {
+  border: solid 2px green;
+  margin: 1rem 0;
+}
+div.none {
+  display: none;
+}
+div.inline {
+  display: inline;
+}
+div.block {
+  display: block;
+}
+div.flex {
+  display: flex;
+}
+div.grid {
+  display: grid;
+}
+div.other {
+  display: inline-block;
+}
+span, a{
+  display: block;
+}
+/* HIDE AN ELEMENT */
+.element{
+  display: none;
+}
+/* or */
+.element{
+  visibility: hidden;
+  /* visibility: visible; */
+}

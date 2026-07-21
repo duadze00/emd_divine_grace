@@ -1,0 +1,93 @@
+/* ====================== FLEX BOX ====================== */
+/* FLEX CONTAINER */
+.flex-container {
+  display: flex; /* Active flex box */
+  flex-direction: row; /* row (default), row-reverse, column,  column-reverse */
+  justify-content: center; /* flex-start (default), space-between, space-around, space-evenly ,  flex-end, center */
+  align-items: center; /* stretch (default), flex-start, baseline ,  flex-end, center */
+  gap: 1rem;
+  flex-wrap: wrap; /* wrap, nowrap, reverse-wrap /Allow flex items to wrap */
+}
+
+/* FLEX ITEMS */
+.flex-item:nth-child(1) {
+  background: red;
+  height: 100px;
+  width: 50px;
+}
+.flex-item:nth-child(2) {
+  background: rgb(255, 0, 149);
+  height: 50px;
+  width: 50px;
+  align-self: center; /* Override parent align-content */
+}
+.flex-item:nth-child(3) {
+  background: rgb(50, 8, 157);
+  height: 100px;
+  width: 100px;
+  order: 1;
+}
+.flex-item:nth-child(4) {
+  background: rgb(10, 146, 40);
+  height: 50px;
+  width: 50px;
+}
+
+/* MAIN AND CROSS AXIS */
+/* Main axis = left to right (horizontal) */
+/* Cross axis = top to bottom (verticaal) */
+
+/* FLEX DIRECTION */
+/* Control the orientaion on of the main axis */
+
+/* JUSTIFY CONTENT */
+/* Align flex item in the main axis */
+
+/* ALIGN ITEM */
+/* Align flex item in the cross axis */
+
+/* GAP */
+/* Set uniform space between flex items */
+
+/* FLEX ITEMS PROPERTIES */
+/* 
+1. Flex-grow
+2. Flex-shrink
+3. Align-self (Override align-item value on the parent container)
+4. order
+*/
+
+/* FLEX WRAP */
+/* Pushes flex-items onto multiple line instead of being forced to fit on a single line when they exceed the container */
+
+/* ORDER */
+/* Changes the visual order of the flex items indepent of their order in the HTML markup */
+
+/* NESTED FLEXBOX */
+/* Is a flexbox within a flexbox */
+
+/* ================================================================ */
+/* RESPONSIVE FLEXBOX */
+.container {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  width: 200px;
+  height: 150px;
+  background: tomato;
+  flex: 1; /* Shorthand for flex-grow, flex-shrink and flex-basis */
+}
+.card {
+  flex: 1 1 300px;
+  /* 
+    Meaning:
+      flex-grow:1;
+      flex-shrink:1;
+      flex-basis:300px;
+  */
+}

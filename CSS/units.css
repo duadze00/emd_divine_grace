@@ -1,0 +1,30 @@
+/* ============= ABSOLUTE UNITS ============= */
+/* 
+1. cm = centimeters
+2. mm = milimeters
+3. in = inches (1in = 96px = 2.5cm)
+4. px = pixel (1px = 1/96th of 1in)
+5. pt = points (1pt = 1/72 of 1in)
+6. pc = picas (1pc = 12pt)
+*/
+
+/* ============= RELATIVE UNITS ============= */
+/* 
+1. em = Relative to the font-size of the element (2em means 2 times the size of the current font)
+
+2. ex = Relative to the x-height of the current font (rarely used)
+
+3. ch = Relative to width of the "0" (zero)
+
+4. rem = Relative to font-size of the root element
+
+5. vw = Relative to 1% of the width of the viewport*
+
+6. vh = Relative to 1% of the height of the viewport*
+
+7. vmin = Relative to 1% of viewport's* small dimension
+
+8. vmax = Relative to 1% of the viewport's* larger dimension
+
+9. % = Relative to the parent element
+ */

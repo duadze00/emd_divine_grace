@@ -1,0 +1,213 @@
+/* ==========================================
+   1. VARIABLES & RESET
+   ========================================== */
+:root {
+  /* Colors */
+  --primary: green;
+  --primary-hover: #09c209;
+  --danger: tomato;
+  --danger-hover: #c23109;
+  --white: #fff;
+  --border: #333;
+  --input-focus-border: green;
+  --list-bg: #dedee8cc;
+
+  /* Scrollbar Thumb Gradient */
+  --scrollbar-thumb-hover-start: #2563eb;
+  --scrollbar-thumb-hover-end: #1e40af;
+  --scrollbar-thumb-active: #1e3a8a;
+
+  /* Layout & Design */
+  --transition: 0.3s ease;
+  --shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  --radius: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--white); /* Added background color variable */
+}
+
+/* ==========================================
+   2. MAIN CONTAINER & HEADINGS
+   ========================================== */
+main {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem; /* Slightly increased for better breathing room */
+  border-radius: var(--radius);
+  border: 1px solid var(--list-bg); /* Added subtle layout border */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 2.4rem; /* Added missing heading size */
+}
+
+/* ==========================================
+   3. INPUTS CONTAINER (Top Section)
+   ========================================== */
+#inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 1.4rem; /* Added missing text sizing for typing */
+  font-family: inherit;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--input-focus-border); /* Clearer focus state variables */
+  box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.1);
+}
+
+#add-btn {
+  padding: 1rem;
+  background-color: var(--primary);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer; /* Added missing pointer cursor */
+  transition: var(--transition);
+}
+
+#add-btn:hover {
+  background-color: var(
+    --primary-hover
+  ); /* Added hover state for the add button */
+}
+
+/* ==========================================
+   4. BOOKMARKS CONTAINER (Bottom Section)
+   ========================================== */
+#bookmarks-container h1 {
+  margin-top: 2.5rem;
+  font-size: 2rem; /* Distinct hierarchy from main title */
+}
+
+#bookmark-list {
+  list-style: none; /* Removed default bullet points */
+  margin-top: 1.5rem;
+  max-height: 250px;
+  padding-right: 10px;
+  overflow-y: auto;
+}
+
+/* ==========================================
+   5. DYNAMIC LIST ITEMS & LINKS
+   ========================================== */
+.bookmark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem; /* Cleaned up padding for better vertical balance */
+  background-color: var(--list-bg);
+  border-radius: var(--radius);
+  margin: 8px 0;
+  text-transform: capitalize;
+  font-size: 1.6rem; /* Toned down slightly from 2rem for better text flow */
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.bookmark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle hover depth */
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+  flex-grow: 1; /* Allows clicking a wider area */
+  margin-right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Keeps long names from breaking UI layout */
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: var(--primary-hover);
+}
+
+.delete {
+  background-color: var(--danger);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer; /* Added missing pointer cursor */
+  transition: var(--transition);
+}
+
+.delete:hover {
+  background: var(--danger-hover);
+}
+
+/* ==========================================
+   6. CUSTOM SCROLLBAR PROPERTIES
+   ========================================== */
+#bookmark-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+#bookmark-list::-webkit-scrollbar-track {
+  background: var(--list-bg);
+  border-radius: 10px;
+  margin: 4px;
+}
+
+#bookmark-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  border: 3px solid var(--list-bg);
+}
+
+#bookmark-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--scrollbar-thumb-hover-start),
+    var(--scrollbar-thumb-hover-end)
+  );
+}
+
+#bookmark-list::-webkit-scrollbar-thumb:active {
+  background: var(--scrollbar-thumb-active);
+}
+
+#bookmark-list::-webkit-scrollbar-button {
+  display: none;
+}
+
+#bookmark-list::-webkit-scrollbar-corner {
+  background: var(--list-bg);
+}

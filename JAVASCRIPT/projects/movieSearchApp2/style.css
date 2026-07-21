@@ -1,0 +1,404 @@
+/* ==========================================
+   CSS VARIABLES & DESIGN TOKENS
+   ========================================== */
+:root {
+  --primary: #8b5cf6;
+  --primary-dark: #6d28d9;
+
+  --background: #0f172a;
+  --card: #1e293b;
+
+  --text: #f8fafc;
+  --muted: #94a3b8;
+
+  --danger: #ef4444;
+  --success: #10b981;
+
+  --radius: 12px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+  --transition: 0.3s ease;
+}
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+/* Critical Helper: Ensures HTML 'hidden' attribute always overrides CSS display rules */
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================
+   MAIN CONTAINER & HEADER
+   ========================================== */
+.app {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 4rem;
+  background: linear-gradient(135deg, var(--primary), #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.6rem;
+}
+
+/* ==========================================
+   SEARCH BAR
+   ========================================== */
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+#search-form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid #334155;
+  background-color: var(--card);
+  color: var(--text);
+  border-radius: var(--radius);
+  font-size: 1.6rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+#search-input:focus {
+  border-color: var(--primary);
+}
+
+#search-btn {
+  padding: 1.2rem 2.5rem;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#search-btn:hover {
+  background: var(--primary-dark);
+}
+
+#search-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   LOADING & SPINNER UI
+   ========================================== */
+#loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+#loading p {
+  font-size: 1.6rem;
+  color: var(--muted);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   MESSAGES & NOTIFICATIONS
+   ========================================== */
+#message {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+.message.info {
+  color: var(--muted);
+}
+
+.message.success {
+  color: var(--success);
+}
+
+/* ==========================================
+   MOVIE GRID
+   ========================================== */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.movie-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background-color: #0f172a;
+}
+
+.movie-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.movie-title {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+
+.movie-rating {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.movie-year {
+  font-size: 1.3rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.movie-overview {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================
+   INFINITE SCROLL LOADER & SENTINEL
+   ========================================== */
+#scroll-sentinel {
+  width: 100%;
+  height: 20px;
+}
+
+#load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+/* ==========================================
+   MOVIE DETAILS MODAL
+   ========================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 3rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-movie {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+}
+
+.modal-poster {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  aspect-ratio: 2 / 3;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-title {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.modal-rating {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.modal-meta span {
+  padding: 0.6rem 1.2rem;
+  background: #334155;
+  border-radius: 999px;
+  font-size: 1.3rem;
+}
+
+.modal-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.genre {
+  padding: 0.5rem 1.2rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.modal-overview {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* Responsive Modal Styling */
+@media (max-width: 700px) {
+  .modal-content {
+    padding: 2rem;
+  }
+
+  .modal-movie {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-poster {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .modal-title {
+    font-size: 2.2rem;
+  }
+}

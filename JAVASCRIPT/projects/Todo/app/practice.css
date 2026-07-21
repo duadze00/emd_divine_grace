@@ -1,0 +1,127 @@
+:root {
+  --primary: #ff8400;
+  --secondary: #ffbf00ea;
+
+  --text: #333;
+  --white-smoke: whitesmoke;
+  --border-sm: #22222217;
+  --danger: #ff6347;
+
+  --shadow-sm: 0 3px 15px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+#container {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  background: var(--white-smoke);
+  border-radius: 10px;
+  padding: 1rem;
+  height: 400px;
+  max-height: 500px;
+  box-shadow: var(--shadow-md);
+}
+
+.container__items {
+  flex: 1;
+  border-radius: 5px;
+}
+
+#input_field {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 0.5px solid var(--primary);
+}
+
+#input_field:focus {
+  outline: 1px solid var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+#add_btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 0;
+  background-color: var(--primary);
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 5px;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.list_items {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  font-size: 1.5rem;
+  border: 0.5px solid var(--border-sm);
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.list_items:hover {
+  background-color: white;
+}
+
+.item {
+  width: 200px;
+  overflow: hidden;
+}
+
+.delete {
+  background: none;
+  border: none;
+  color: var(--danger);
+  transition: 0.3s ease;
+}
+
+.delete:hover {
+  color: red;
+}
+
+#parent {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+#remains {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--primary);
+}

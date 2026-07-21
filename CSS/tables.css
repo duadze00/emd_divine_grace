@@ -1,0 +1,40 @@
+table,
+th,
+td {
+  border: 1px solid black;
+}
+table {
+  width: 100%;
+  width: 50%;
+}
+th {
+  height: 70px;
+}
+table {
+  border-collapse: collapse;
+}
+table {
+  border: 1px solid black;
+}
+
+/* Horizontal Alignment */
+td {
+  text-align: center;
+  text-align: left;
+  text-align: right;
+}
+
+/* Vertical Alignment */
+td {
+  vertical-align: bottom;
+  vertical-align: top;
+  vertical-align: middle; /* Default */
+}
+tr:hover {background-color: #f5f5f5;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(odd) {background-color: #eb9a9a;}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}

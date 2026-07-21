@@ -1,0 +1,29 @@
+/* CSS Resizing */
+/* The resize property specifies if (and how) an element should be resizable by the user. */
+div{
+  border: solid 1px;
+  margin-bottom: 1rem;
+}
+div.one {
+  resize: horizontal;
+  overflow: auto;
+}
+div.vertical {
+  resize: vertical;
+  overflow: auto;
+}
+div.both {
+  resize: both;
+  overflow: auto;
+}
+textarea {
+  resize: none;
+}
+
+/* CSS Outline Offset */
+/* The outline-offset property adds space between an outline and the edge or border of an element. */
+div.offset {
+  margin: 20px;
+  outline: 4px solid red;
+  outline-offset: 15px;
+}

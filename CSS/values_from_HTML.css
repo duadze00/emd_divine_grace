@@ -1,0 +1,57 @@
+body {
+  background: papayawhip;
+}
+section {
+  min-height: 100vh;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+p {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 1rem auto;
+  box-shadow: 0 1px ;
+}
+input,
+select,
+button,
+a {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  font: inherit;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+button,
+a {
+  background-color: #008cff;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+a,
+img {
+  display: block;
+  margin: 1rem auto;
+}
+a {
+  text-decoration: none;
+  text-align: center;
+  width: 150px;
+}

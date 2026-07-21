@@ -1,0 +1,65 @@
+a.super {
+  border: solid 3px green;
+  padding: 0.5rem;
+  margin: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  background-color: lightgrey;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+}
+a.super:hover {
+  background-color: green;
+  color: white;
+}
+a.super:active {
+  background-color: rgb(255, 140, 0);
+  color: black;
+  border: solid 3px rgb(255, 140, 0);
+}
+
+/* ===== LINKS STATE ===== */
+
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+/* ===== LINK STATE ORDER RULES ===== */
+/* 
+1. a:hover MUST come after a:link and a:visited.
+2. a:active MUST come after a:hover.
+*/
+
+a.me:link,
+a.me:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.me:hover,
+a.me:active {
+  background-color: red;
+}
+
+

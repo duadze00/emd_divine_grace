@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flex Navbar</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      div.horizontal {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch; /* makes children full height */
+        margin: 1rem 2rem;
+        background-color: #575555;
+        padding: 0; /* remove vertical padding for cleaner full-height effect */
+        height: 60px; /* define height */
+      }
+
+      div.left,
+      div.right {
+        display: flex;
+        align-items: stretch;
+      }
+
+      /* Make links fill full height */
+      .left a,
+      .right a {
+        display: flex;
+        align-items: center; /* center text vertically */
+        padding: 0 15px;
+        text-decoration: none;
+        color: white;
+        height: 100%;
+      }
+
+      /* Right link border style */
+      .right a {
+        border-left: solid white 1px;
+      }
+
+      /* Left link style */
+      .left a {
+        background: green;
+      }
+
+      /* Hover effect */
+      .right a:hover {
+        background: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="horizontal">
+        <div class="left">
+          <a href="#">Logo</a>
+        </div>
+
+        <div class="right">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

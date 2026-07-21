@@ -1,0 +1,25 @@
+/* Box Sizing */
+/* If you set box-sizing: border-box; on an element, padding and border are included in the width and height: */
+div {
+  margin-bottom: 1rem;
+}
+.border {
+  width: 300px;
+  height: 100px;
+  padding: 50px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+
+/* If you set box-sizing: content-box;(Default) on an element, padding and border are not included in the width and height: */
+.content {
+  width: 300px;
+  padding: 50px;
+  height: 100px;
+  border: 1px solid blue;
+}
+
+/* Always set the root element to box-sizing: border-box; */
+* {
+  box-sizing: border-box;
+}

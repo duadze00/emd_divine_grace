@@ -1,0 +1,48 @@
+/* NB. When you set color property, always set background-color property. */
+body {
+  background-color: lightgrey;
+  color: blue;
+}
+
+h1 {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+div {
+  text-align: justify;
+}
+
+/* The direction and unicode-bidi properties can be used to change the text direction of an element */
+p.one {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* The vertical-align property sets the vertical alignment of an element. */
+img.a {
+  vertical-align: baseline;
+}
+
+img.b {
+  vertical-align: text-top;
+}
+
+img.c {
+  vertical-align: text-bottom;
+}
+
+img.d {
+  vertical-align: sub;
+}
+
+img.e {
+  vertical-align: super;
+}

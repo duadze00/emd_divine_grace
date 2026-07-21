@@ -1,0 +1,113 @@
+/* ======== FLOAT =========== */
+/* Specify how element should float on a page. */
+img {
+  width: 150px;
+  float: right;
+  float: left;
+  /* float: none;
+  float: inherit; */
+}
+div {
+  float: left;
+  padding: 15px;
+}
+
+.div1 {
+  background: red;
+  width: 50px;
+  height: 50px;
+}
+
+.div2 {
+  background: yellow;
+  width: 50px;
+  height: 50px;
+}
+
+.div3 {
+  background: green;
+  width: 50px;
+  height: 50px;
+}
+
+/* ======== CLEAR =========== */
+/* Specify what element can float beside the cleared element and on which side. */
+.me {
+  width: 200px;
+  float: right;
+}
+.clear {
+  clear: left;
+  clear: right;
+  clear: none;
+  clear: both;
+  clear: inherit;
+}
+
+/* ======== CLEARFIX HACK =========== */
+.element {
+  overflow: auto;
+}
+
+/* +++++++++++++++++++++++++++ */
+.float-img {
+  float: left;
+  width: 150px;
+  margin-right: 10px;
+}
+.box {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.container {
+  background: lightgray;
+}
+p {
+  clear: both;
+}
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* +++++++++++++++++++++++++++ */
+
+/* ======= FULL FLOAT, CLEAR AND CLEARFIX ======= */
+.container {
+  background: lightgray;
+}
+
+/* clearfix */
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.box {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: red;
+  margin: 5px;
+}
+/* =========================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.bo {
+  float: left;
+  width: 25%; /* three boxes
+  padding: 50px; /* if you want space between the images */
+}
+.bo:nth-child(odd){
+  background: green;
+}
+.bo:nth-child(even){
+  background: lightblue;
+}

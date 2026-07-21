@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="practice.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!-- Summary and Form Container -->
+      <div id="container">
+        <!-- Summary Container -->
+        <div id="balance-container">
+          <!-- Total Balance -->
+          <div id="balance-container__total-container">
+            <h1>Total Balance</h1>
+            <h2 id="total-container__balance">$0.00</h2>
+          </div>
+
+          <!-- Transactions Container -->
+          <div id="transactions-container">
+            <!-- Income -->
+            <div class="transactions">
+              <h1>Total Income</h1>
+              <h2 id="transactions__income">$0.00</h2>
+            </div>
+            <!-- Expenses -->
+            <div class="transactions">
+              <h1>Total Expenses</h1>
+              <h2 id="transactions__expenses">$0.00</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Container -->
+        <div id="form-container">
+          <form>
+            <div id="form-container__input">
+              <div id="type">
+                <label for="transaction-type">Transaction Type</label>
+                <select name="transaction-type" id="transaction-type">
+                  <option value="income">Income</option>
+                  <option value="expenses">Expenses</option>
+                </select>
+              </div>
+
+              <div id="amount-input">
+                <label for="amount"> Amount </label>
+                <input
+                  type="number"
+                  id="amount"
+                  name="amout"
+                  placeholder="Amount"
+                  required
+                  min="0"
+                />
+                <small>Amount is required</small>
+              </div>
+            </div>
+            <button id="add-transaction-btn">Add Transaction</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- History Container -->
+      <div id="history">
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="practice.js"></script>
+  </body>
+</html>

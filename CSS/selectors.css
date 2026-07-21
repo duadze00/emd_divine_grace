@@ -1,0 +1,64 @@
+/* ============= Selectors Categories ============= */
+/* 
+1. Simple Selectors
+2. Combinator Selectors
+3. Pseudo-class Selectors
+4. Pseudo-elements Selectors
+5. Attribute Selectors
+*/
+
+/* ============== Root Selectors ============== */
+:root {
+  margin: 0;
+}
+
+/* ============== Element Selectors ============== */
+p {
+  color: yellow;
+}
+footer {
+  color: yellow;
+}
+
+/* ============== Id Selector ============== */
+#para1 {
+  color: blue;
+}
+#container {
+  color: blue;
+}
+
+/* ============== Class Selectors ============== */
+.parent {
+  background-color: green;
+}
+
+/* ============== Universal Selectors ============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============== Grouping Selectors ============== */
+h1,
+h2,
+p {
+  text-align: center;
+  color: red;
+}
+
+/* ============== How To Add CSS ============== */
+/* 
+1. Inline CSS 
+2. Internal CSS 
+3. External CSS
+*/
+
+/* ============== NTH-CHILD SELECTOR ============== */
+p:nth-child(even) {
+  background-color: green;
+}
+p:nth-child(odd) {
+  background-color: blue;
+}

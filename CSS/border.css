@@ -1,0 +1,53 @@
+h1 {
+  border-style: solid;
+  border-width: 2px;
+}
+/* NB. Always set the border-style before any other property. */
+h2 {
+  border-style: groove;
+  border-width: 8px;
+}
+
+h3{
+  border-style: double;
+  border-width: 5px 10px;
+}
+h4{
+  border-style: dashed;
+  border-width: 10px;
+  border-color: green;
+}
+h5{
+  border-style: ridge;
+  border-color: mediumvioletred;
+}
+h6{
+  border-style: solid;
+  border-color: red blue green magenta;
+}
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+
+/* Example above Shorthand */
+
+p {
+  border-style: dotted solid;
+}
+
+/* ====== BORDER SHORTHAND ====== */
+div{
+  border: solid 2px blueviolet;
+}
+
+footer {
+  border-left: 6px solid red;
+  background-color: lightgrey;
+}
+.border{
+  border: solid 4px green;
+  border-radius: 5px;
+}

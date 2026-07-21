@@ -1,0 +1,52 @@
+/* =================== BASIC ATTRIBUTE SELECTOR, [attribute] Selector =================== */
+[required] {
+  border: 2px solid red;
+}
+/* This target element with required attribute */
+
+/* =================== EXACT VALUE SELECTOR, [attribute="value"] =================== */
+[type="password"] {
+  background: black;
+  color: white;
+}
+/* This selects elements whose attribute is EXACTLY equal to a value */
+
+/* =================== CONTAINS WORD SELECTOR, [attribute~="value"] =================== */
+[class~="featured"] {
+  border: 3px solid gold;
+}
+/* This checks for a WHOLE WORD inside a space-separated list. */
+/* NB. ~= splits values by spaces */
+/* class="one two three" */
+
+/* =================== HYPHEN PREFIX SELECTOR, [attribute|="value"] =================== */
+[lang|="en"] {
+  color: blue;
+}
+[lang|="fr"] {
+  color: magenta;
+}
+/* Matches: exact value OR value followed by - */
+
+/* =================== STARTS WITH SELECTOR, [attribute^="value"] =================== */
+[href^="https"],
+[class^="btn"] {
+  color: green;
+}
+/* The ^= means: starts with */
+
+/* =================== ENDS WITH SELECTOR, [attribute$="value"] =================== */
+[href$=".jpg"] {
+  border: 3px solid red;
+}
+/* Eg. 
+[href$=".pdf"]
+[src$=".png"]
+ */
+/* The $= means: ends with */
+
+/* =================== CONTAINS SELECTOR, [attribute*="value"] =================== */
+[href*="google"] {
+  color: red;
+}
+/* The *= means: contains anywhere */

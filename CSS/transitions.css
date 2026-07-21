@@ -1,0 +1,67 @@
+/* =================== TRANSITION ===================*/
+/* Transitions allows you to change property values smoothly, over a given duration. */
+/* 
+1. transition-delay
+2. transition-duration
+3. transition-property
+4. transition-timing-function 
+*/
+
+div {
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+
+/* Specify the Speed Curve of the Transition */
+#div1 {
+  transition-timing-function: linear;
+}
+#div2 {
+  transition-timing-function: ease;
+}
+#div3 {
+  transition-timing-function: ease-in;
+}
+#div4 {
+  transition-timing-function: ease-out;
+}
+#div5 {
+  transition-timing-function: ease-in-out;
+}
+
+/* Delay the Transition Effect */
+div {
+  transition-delay: 1s;
+}
+
+/* =================== TRANSITION SHORTHAND ===================*/
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+div:hover {
+  width: 300px;
+}
+
+/* Change Several Property Values */
+div {
+  transition:
+    width 2s,
+    height 4s;
+}
+
+/* Transition + Transformation */
+div {
+  transition:
+    width 2s,
+    height 2s,
+    transform 2s;
+}
+
+div {
+  transition: width 2s linear 1s;
+}

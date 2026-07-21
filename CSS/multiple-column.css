@@ -1,0 +1,64 @@
+/* Multi-column Properties */
+/* 
+1. column-count
+2. column-gap
+3. column-rule-style
+4. column-rule-width
+5. column-rule-color
+6. column-rule
+7. column-span
+8. column-width
+*/
+
+/* Create Multiple Columns */
+/* The column-count property specifies the number of columns an element should be divided into. */
+div.columns {
+  column-count: 3;
+}
+
+/* Specify the Gap Between Columns */
+/* The column-gap property specifies the gap between the columns. */
+div.columns {
+  column-gap: 40px;
+}
+
+/* Column Rules */
+/* The column-rule-style property specifies the style of the rule between columns. */
+div.columns {
+  column-rule-style: solid;
+}
+/* The column-rule-width property specifies the width of the rule between columns */
+div.columns {
+  column-rule-width: 5px;
+}
+
+/* The column-rule-color property specifies the color of the rule between columns. */
+div.columns {
+  column-rule-color: lightblue;
+}
+
+/* Column-rule is the Short hand for setting all the column rules. */
+div.columns {
+  column-rule: 1px solid green;
+}
+
+/* Specify How Many Columns an Element Should Span */
+/* The column-span property specifies how many columns an element should span across. */
+h2 {
+  column-span: all;
+  letter-spacing: 5px;
+  word-spacing: 2rem;
+}
+
+/* Specify The Column Width */
+/* The column-width property specifies a suggested, optimal width for the columns. */
+div.columns {
+  column-width: 100px;
+}
+
+/* ======================= COLUMN SHORTHAND =======================*/
+/* The columns property is a shorthand property for column-width and column-count */
+/* columns: auto|column-width column-count|initial|inherit; */
+div {
+  columns: 100px 3;
+}

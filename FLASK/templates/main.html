@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='emd_divine_grace_logo.png')}}"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>EMD Divine Grace</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="parent_nav_bar">
+          <a href="{{url_for('home')}}">
+            <img
+              id="logo"
+              src="{{ url_for('static', filename='emd_divine_grace_logo.png')}}"
+            />
+          </a>
+
+          <div class="nav-links">
+            <a href="{{url_for('about')}}" class="show">About Us</a>
+            <a href="{{url_for('skills')}}" class="show">Skills</a>
+            <a href="{{url_for('contact')}}" class="show">Contact</a>
+          </div>
+
+          <div class="auth-links">
+            <a href="{{url_for('login')}}" class="btn-outline" id="btnlog">Login</a>
+            <a href="{{url_for('register')}}" class="btn" id="btn1">Register</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="brand">
+            <abbr class="emd" title="Eric Mawule Duadze"
+              ><span class="name">EMD</span></abbr
+            >
+            Divine Grace
+          </p>
+          <h1>Learn Ultrasound, Programming & Design</h1>
+          <p>
+            EMD Divine Grace teaches you the practical skills in sonography,
+            coding, and graphic design, helping you build real-world expertise.
+          </p>
+          <div class="hero-buttons">
+            <a href="/register" class="btn">Get Started</a>
+            <a href="/about" class="btn-outline" id="btn-outline1"
+              >Learn More</a
+            >
+          </div>
+        </div>
+        <p id="motion">>>>></p>
+      </section>
+
+      <section class="services">
+        <h2>What You Can Learn</h2>
+        <div class="service-container">
+          <div class="card">
+            <h3>Ultrasound Training</h3>
+            <p>
+              Learn scanning techniques, anatomy, and interpretation like a
+              professional sonographer.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Programming</h3>
+            <p>
+              From beginner to advanced — Python, Flask, and real-world
+              projects.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Graphic Design</h3>
+            <p>
+              Create stunning visuals, branding, and UI designs that stand out.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2>What Students Say</h2>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <p>
+              “EMD Divine Grace made ultrasound so easy to understand. The
+              teaching style is practical and very clear.”
+            </p>
+            <h4>— Ama K.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              “I started programming from zero, but now I can build simple Flask
+              apps. The lessons are step-by-step and beginner friendly.”
+            </p>
+            <h4>— Kwame B.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              “The design tutorials helped me improve my branding skills. I now
+              create professional-looking designs.”
+            </p>
+            <h4>— Efua M.</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="why">
+        <h2>Why Learn With Me?</h2>
+        <div class="why-container">
+          <div class="card">Practical real-world teaching</div>
+          <div class="card">Step-by-step guidance</div>
+          <div class="card">Beginner to advanced</div>
+          <div class="card">Multi-skill advantage</div>
+        </div>
+      </section>
+
+      <section class="trust">
+        <p>
+          Helping students build skills in ultrasound, programming, and design.
+        </p>
+      </section>
+
+      <section class="steps">
+        <h2>How It Works</h2>
+        <div class="step-box">
+          <div class="step">1. Create an account</div>
+          <div class="step">2. Choose your skill</div>
+          <div class="step">3. Start learning</div>
+        </div>
+      </section>
+
+      <section class="team">
+        <h2>Meet the Team</h2>
+
+        <div class="team-container">
+          <!-- PERSON 1 -->
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="{{ url_for('static', filename='ERIC.png') }}"
+                alt="Founder & CEO"
+              />
+            </div>
+            <h3>Eric Mawule Duadze</h3>
+            <p class="role">Founder & CEO</p>
+            <p class="description">
+              Passionate about teaching ultrasound, programming, and design.
+              Focused on helping students build real-world skills.
+            </p>
+          </div>
+
+          <!-- PERSON 2 (example future use) -->
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="{{ url_for('static', filename='person2.jpg') }}"
+                alt="Instructor"
+              />
+            </div>
+            <h3>Jane Doe</h3>
+            <p class="role">Design Instructor</p>
+            <p class="description">
+              Specializes in branding and UI/UX design, helping students create
+              modern and professional visuals.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>Start Your Learning Journey Today</h2>
+        <a href="{{url_for('register')}}" class="btn">Register Now</a>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2026 EMD Divine Grace</p>
+      <p>Learn. Build. Grow.</p>
+    </footer>
+  </body>
+</html>

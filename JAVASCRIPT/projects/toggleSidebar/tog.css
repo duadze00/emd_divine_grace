@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: black;
+  position: relative; /* important for dropdown */
+}
+
+/* LOGO */
+.logo img {
+  height: 40px;
+}
+
+/* NAV LINKS (DESKTOP DEFAULT) */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* CTA */
+.cta {
+  text-decoration: none;
+  background: white;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* TOGGLE BUTTON (HIDDEN BY DEFAULT) */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* MOBILE (375px and below) */
+/* ========================= */
+@media (max-width: 375px) {
+  /* SHOW TOGGLE */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* HIDE NORMAL NAV */
+  .nav-links,
+  .cta {
+    display: none;
+  }
+
+  /* DROPDOWN MENU WHEN ACTIVE */
+  .nav-links.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background: black;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 0 0 0 10px;
+  }
+}

@@ -1,0 +1,52 @@
+/* ====== TEXT INDENT ====== */
+
+/* For indenting first word in paragraph or others. */
+p.one {
+  text-indent: px;
+}
+
+/* ====== LETTER SPACING ====== */
+/* Used to specify space between text characters. */
+p.name {
+  letter-spacing: 5px;
+}
+h2.name {
+  letter-spacing: -3px;
+}
+
+/* ====== LINE HEIGHT ====== */
+/* Used to specify space between lines. */
+p.small {
+  line-height: 0.8;
+}
+
+p.big {
+  line-height: 1.8;
+}
+
+/* ====== WORD SPACING ====== */
+/* Used to specify space between words. */
+h1.spacing {
+  word-spacing: 10px;
+}
+
+/* ====== WHITE SPACE ====== */
+/* Used to specify how white-space inside an element is handled. */
+/* To disable or enable text to wrap or not. */
+p.space {
+  white-space: nowrap;
+  /* white-space: wrap; */
+}
+
+/* ====== TEXT SHADOW ====== */
+/* Used to add shadows to text. */
+h1.shadow{
+  text-shadow: 2px 2px;
+}
+h1.shadow{
+  text-shadow: 2px 2px green;
+}
+h1.shadow{
+  text-shadow: 2px 2px 5px green;
+}
+/* NB. The third pixel value add the blur effect. */

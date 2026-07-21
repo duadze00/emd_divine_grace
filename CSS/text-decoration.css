@@ -1,0 +1,28 @@
+/* ==== TEXT DECORATION ==== */
+a {
+  text-decoration: none;
+}
+h1 {
+  text-decoration: overline;
+}
+
+h2 {
+  text-decoration: line-through;
+}
+
+a.call {
+  text-decoration: underline;
+}
+
+/* ==== TEXT TRANSFORM ==== */
+p.uppercase {
+  text-transform: uppercase;
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+p.capitalize {
+  text-transform: capitalize;
+}
