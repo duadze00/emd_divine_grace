@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Weather App</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>☁️ Live Weather</h1>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name..."
+          autocomplete="off"
+        />
+
+        <button id="searchButton">Search</button>
+      </div>
+
+      <div id="errorMsg" class="error-msg"></div>
+
+      <div id="weatherInfo" class="weather-info">
+        <div id="cityName" class="city-name"></div>
+        <div id="weatherIcon" class="weather-icon">☀️</div>
+        <div id="temp" class="temp"></div>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="detail-label"> Feels Like </span>
+            <span id="feelsLike" class="detail-value"></span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label"> Humidity </span>
+            <span id="humidity" class="detail-value"></span>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label"> Wind </span>
+            <span id="windSpeed" class="detail-value"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Link to external JavaScript -->
+    <script src="./script.js"></script>
+  </body>
+</html>
