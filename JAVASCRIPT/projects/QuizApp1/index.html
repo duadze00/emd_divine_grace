@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Quiz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background glowing orbs to highlight the glassmorphism blur -->
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <main class="glass-card">
+      <!-- Start Screen -->
+      <div class="screen active" id="start-screen">
+        <div class="badge">Test Your Knowledge</div>
+        <h1>Web Development Quiz</h1>
+        <p>
+          Challenge yourself with core web concepts. Track your score in real
+          time and see if you can hit 100%!
+        </p>
+        <button id="start-quiz" class="btn btn-primary">
+          <span>Start Quiz</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Quiz Screen -->
+      <div class="screen" id="quiz-screen">
+        <div id="quiz-info">
+          <span class="question-tracker">
+            Question <strong id="start">1</strong> / <span id="end">10</span>
+          </span>
+          <span class="score-badge">Score: <strong id="score">0</strong></span>
+        </div>
+
+        <div
+          id="progress-bar"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div id="progress"></div>
+        </div>
+
+        <h2 id="question">Loading question...</h2>
+
+        <ul id="answer-btn-container">
+          <!-- Dynamic answer buttons inserted via JS -->
+        </ul>
+      </div>
+
+      <!-- Result Screen -->
+      <div class="screen" id="result-screen">
+        <div class="result-icon">🏆</div>
+        <h1>Quiz Completed!</h1>
+
+        <div id="score-info">
+          <p>
+            You scored <strong id="total-score">0</strong> out of
+            <span id="total-question">10</span>
+          </p>
+        </div>
+
+        <div id="percent-info">
+          <div class="percent-circle">
+            <span id="percent">0%</span>
+          </div>
+        </div>
+
+        <button id="restart-quiz" class="btn btn-primary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
+          </svg>
+          <span>Try Again</span>
+        </button>
+      </div>
+    </main>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
