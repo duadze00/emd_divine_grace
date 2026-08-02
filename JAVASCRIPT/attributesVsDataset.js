@@ -198,7 +198,7 @@ button.addEventListener("click", handleAddToCart);
 // Programmatically triggering the click event to see the final logs!
 button.click();
 
-/**
+/*
  * ============================================================================
  * ADVANCED ATTRIBUTES & DATASET: THE PRO LEVEL SCRIPT
  * ============================================================================

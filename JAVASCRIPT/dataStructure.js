@@ -487,6 +487,3 @@ network.addEdge("Alice", "David");
 
 console.log("Network Proximity Traversal Map (BFS from Alice):");
 console.log(network.bfs("Alice"));
-console.log(
-  "============================================================================",
-);
