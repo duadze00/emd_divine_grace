@@ -1,0 +1,13 @@
+/* Localized class names prevent global scope contamination */
+.primaryBtn {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primaryBtn:hover {
+  background-color: #1d4ed8;
+}
