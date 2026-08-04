@@ -1,5 +1,5 @@
 // * Import CSS Modules scoped object
-import styles from "./stylingModule.css";
+import Style from "./Style.module.css";
 
 export default function StylingTopic() {
   return (
@@ -12,7 +12,7 @@ export default function StylingTopic() {
       <section style={{ marginBottom: "20px" }}>
         <h3>CSS Modules (Scoped Classes)</h3>
         {/* Rendered as unique hash class name e.g., class="Button_primaryBtn__x8Yz" */}
-        <button className={styles.primaryBtn}>Scoped CSS Module Button</button>
+        <button className={Style.primaryBtn}>Scoped CSS Module Button</button>
       </section>
 
       {/* ==========================================
