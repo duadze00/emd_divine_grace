@@ -1,9 +1,9 @@
 // React re-renders components by default when parents render. Learn React.memo, useCallback, and useMemo to prevent expensive recalculations.
 
-import React, { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback } from "react";
 
 // ==========================================
-// SUBTOPIC 10.1: REACT.MEMO (COMPONENT SKIPPING)
+// REACT.MEMO (COMPONENT SKIPPING)
 // ==========================================
 // Skips re-rendering Child if props haven't changed.
 const HeavyChild = React.memo(({ onClick, label }) => {
@@ -20,7 +20,7 @@ export default function PerformanceTopic() {
   const [text, setText] = useState("");
 
   // ==========================================
-  // SUBTOPIC 10.2: USEMEMO (EXPONSIVE CALCULATIONS)
+  // USEMEMO (EXPONSIVE CALCULATIONS)
   // ==========================================
   // Caches calculation results unless dependencies change.
   const expensiveCalculation = useMemo(() => {
@@ -31,7 +31,7 @@ export default function PerformanceTopic() {
   }, [count]); // Only recalculates when `count` changes, NOT when `text` changes
 
   // ==========================================
-  // SUBTOPIC 10.3: USECALLBACK (STABLE FUNCTION REFERENCES)
+  // USECALLBACK (STABLE FUNCTION REFERENCES)
   // ==========================================
   // Prevents re-creating callback functions on every render (keeps props stable for React.memo).
   const handleChildClick = useCallback(() => {

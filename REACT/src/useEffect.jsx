@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function UseEffectTopic() {
   const [postId, setPostId] = useState(1);
@@ -7,7 +7,7 @@ export default function UseEffectTopic() {
   const [error, setError] = useState(null);
 
   // ==========================================
-  // SUBTOPIC 2.1: LIFECYCLE PHASES & DEPENDENCY ARRAY
+  // LIFECYCLE PHASES & DEPENDENCY ARRAY
   // ==========================================
   // No array: Runs after EVERY render.
   // Empty array []: Runs ONCE on mount (component insertion).
@@ -17,7 +17,7 @@ export default function UseEffectTopic() {
   }, [postId]);
 
   // ==========================================
-  // SUBTOPIC 2.2: API DATA FETCHING WITH ABORTCONTROLLER
+  // API DATA FETCHING WITH ABORTCONTROLLER
   // ==========================================
   // Job-Ready Requirement: Always handle loading, errors, and race conditions.
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function UseEffectTopic() {
     fetchPost();
 
     // ==========================================
-    // SUBTOPIC 2.3: CLEANUP FUNCTIONS
+    // CLEANUP FUNCTIONS
     // ==========================================
     // Runs before re-executing effect or when component unmounts.
     return () => {
@@ -56,7 +56,7 @@ export default function UseEffectTopic() {
   }, [postId]);
 
   // ==========================================
-  // SUBTOPIC 2.4: TIMERS & SUBSCRIPTIONS CLEANUP
+  // TIMERS & SUBSCRIPTIONS CLEANUP
   // ==========================================
   const [seconds, setSeconds] = useState(0);
 
@@ -72,7 +72,7 @@ export default function UseEffectTopic() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h2>2. useEffect & API Fetching Masterclass</h2>
+      <h2>useEffect & API Fetching</h2>
 
       {/* Timer Display */}
       <p>Timer (Cleaned up properly): {seconds}s</p>

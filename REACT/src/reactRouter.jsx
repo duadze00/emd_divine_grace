@@ -18,7 +18,7 @@ function Home() {
 }
 
 // ==========================================
-// SUBTOPIC 5.1: DYNAMIC ROUTE PARAMS (useParams)
+// DYNAMIC ROUTE PARAMS (useParams)
 // ==========================================
 function UserProfile() {
   const { id } = useParams(); // Reads dynamic route param ":id"
@@ -32,7 +32,7 @@ function UserProfile() {
       </p>
 
       {/* ==========================================
-          SUBTOPIC 5.2: PROGRAMMATIC NAVIGATION
+          PROGRAMMATIC NAVIGATION
           ========================================== */}
       <button onClick={() => navigate("/")}>Go to Home Programmatically</button>
     </div>
@@ -40,7 +40,7 @@ function UserProfile() {
 }
 
 // ==========================================
-// SUBTOPIC 5.3: NESTED ROUTES & OUTLET
+// NESTED ROUTES & OUTLET
 // ==========================================
 function DashboardLayout() {
   return (

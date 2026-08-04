@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 
 // ==========================================
-// SUBTOPIC 11.1: CLASS-BASED ERROR BOUNDARY
+// CLASS-BASED ERROR BOUNDARY
 // ==========================================
 // Error boundaries MUST be Class Components (Hooks do not exist yet for getDerivedStateFromError).
 export class ErrorBoundary extends Component {
@@ -43,7 +43,7 @@ export class ErrorBoundary extends Component {
 }
 
 // ==========================================
-// SUBTOPIC 11.2: FAULTY COMPONENT TEST
+// FAULTY COMPONENT TEST
 // ==========================================
 function BuggyComponent() {
   const [shouldCrash, setShouldCrash] = useState(false);
@@ -65,7 +65,7 @@ function BuggyComponent() {
 export default function ErrorBoundaryTopic() {
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h2>11. Error Boundary Masterclass</h2>
+      <h2>Error Boundary Masterclass</h2>
       <p>
         If the component crashes, the boundary catches it without breaking the
         rest of the application UI.

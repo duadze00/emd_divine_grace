@@ -1,7 +1,7 @@
 // This component demonstrates CSS Keyframe Animations (zero external libraries) and Framer Motion Animations (industry-standard React library).
 // ​Note for Framer Motion: Requires npm i framer-motion.
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function AnimationsTopic() {
@@ -9,7 +9,7 @@ export default function AnimationsTopic() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h2>7. Animations Masterclass</h2>
+      <h2>Animations Masterclass</h2>
 
       {/* Toggle control */}
       <button onClick={() => setIsVisible((prev) => !prev)}>
@@ -18,7 +18,7 @@ export default function AnimationsTopic() {
 
       <div style={{ display: "flex", gap: "30px", marginTop: "20px" }}>
         {/* ==========================================
-            SUBTOPIC 7.1: PURE CSS TRANSITIONS / KEYFRAMES
+            PURE CSS TRANSITIONS / KEYFRAMES
             ========================================== */}
         <div>
           <h3>1. Pure CSS Transitions</h3>
@@ -39,7 +39,7 @@ export default function AnimationsTopic() {
         </div>
 
         {/* ==========================================
-            SUBTOPIC 7.2: FRAMER MOTION (RECOMMENDED FOR REACT)
+            FRAMER MOTION (RECOMMENDED FOR REACT)
             ========================================== */}
         <div>
           <h3>2. Framer Motion + AnimatePresence</h3>

@@ -12,12 +12,12 @@ import React, {
 import ReactDOM from "react-dom";
 
 // ============================================================================
-// TOPIC 3: CONTEXT API
+// CONTEXT API
 // ============================================================================
-// 3.1 Creating Context
+// 1 Creating Context
 const ThemeContext = createContext(null);
 
-// 3.2 Provider Component
+// 2 Provider Component
 function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("light");
   const toggleTheme = () =>
@@ -30,7 +30,7 @@ function ThemeProvider({ children }) {
   );
 }
 
-// 3.3 Custom Hook to Consume Context
+// 3 Custom Hook to Consume Context
 function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) throw new Error("useTheme must be used within ThemeProvider");
@@ -38,9 +38,9 @@ function useTheme() {
 }
 
 // ============================================================================
-// TOPIC 8: USEREDUCER (COMPLEX STATE MANAGEMENT)
+// USEREDUCER (COMPLEX STATE MANAGEMENT)
 // ============================================================================
-// 8.1 Reducer Function & Action Types
+// 1 Reducer Function & Action Types
 const initialTaskState = { tasks: [], count: 0 };
 
 function taskReducer(state, action) {
@@ -71,9 +71,9 @@ function taskReducer(state, action) {
 }
 
 // ============================================================================
-// TOPIC 10: PERFORMANCE OPTIMIZATION (REACT.MEMO)
+// PERFORMANCE OPTIMIZATION (REACT.MEMO)
 // ============================================================================
-// 10.1 React.memo prevents unnecessary re-renders if props don't change
+// 1 React.memo prevents unnecessary re-renders if props don't change
 const TaskListItem = React.memo(({ task, onToggle, onDelete }) => {
   console.log(`[Render] TaskListItem ID: ${task.id}`);
   return (
@@ -113,9 +113,9 @@ const TaskListItem = React.memo(({ task, onToggle, onDelete }) => {
 });
 
 // ============================================================================
-// TOPIC 11: ERROR BOUNDARIES
+// ERROR BOUNDARIES
 // ============================================================================
-// 11.1 Class-based Error Boundary catches child component runtime crashes
+// 1 Class-based Error Boundary catches child component runtime crashes
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
@@ -151,7 +151,7 @@ class ErrorBoundary extends Component {
   }
 }
 
-// 11.2 Buggy Component to test Error Boundary
+// 2 Buggy Component to test Error Boundary
 function BuggyTester() {
   const [crash, setCrash] = useState(false);
   if (crash) throw new Error("Simulated runtime error!");
@@ -174,9 +174,9 @@ function BuggyTester() {
 }
 
 // ============================================================================
-// TOPIC 12: REACT PORTALS
+// REACT PORTALS
 // ============================================================================
-// 12.1 Renders element directly into document.body to bypass layout z-index issues
+// 1 Renders element directly into document.body to bypass layout z-index issues
 function ModalPortal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 
@@ -222,43 +222,43 @@ function ModalPortal({ isOpen, onClose, children }) {
 // ============================================================================
 function MasterReactApp() {
   // --------------------------------------------------------------------------
-  // TOPIC 1: USESTATE
+  // USESTATE
   // --------------------------------------------------------------------------
-  // 1.1 Primitive State
+  // 1 Primitive State
   const [filter, setFilter] = useState("all");
 
-  // 1.2 Form State Object (Controlled Input)
+  // 2 Form State Object (Controlled Input)
   const [formData, setFormData] = useState({ text: "", category: "work" });
   const [formError, setFormError] = useState("");
 
-  // 1.3 Lazy State Initialization
+  // 3 Lazy State Initialization
   const [savedPreference] = useState(() => {
     return "Loaded from Lazy State Initialization";
   });
 
   // --------------------------------------------------------------------------
-  // TOPIC 8: USEREDUCER HOOK INITIALIZATION
+  // USEREDUCER HOOK INITIALIZATION
   // --------------------------------------------------------------------------
-  // 8.2 Dispatching actions to manage array updates immutably
+  // 1 Dispatching actions to manage array updates immutably
   const [taskState, dispatch] = useReducer(taskReducer, initialTaskState);
 
   // --------------------------------------------------------------------------
-  // TOPIC 9: USEREF
+  // USEREF
   // --------------------------------------------------------------------------
-  // 9.1 DOM Node Access
+  // 1 DOM Node Access
   const inputRef = useRef(null);
 
-  // 9.2 Mutable Persistence across renders without causing re-render
+  // 2 Mutable Persistence across renders without causing re-render
   const renderCounterRef = useRef(0);
   renderCounterRef.current += 1;
 
   // --------------------------------------------------------------------------
-  // TOPIC 2: USEEFFECT & API DATA FETCHING
+  // USEEFFECT & API DATA FETCHING
   // --------------------------------------------------------------------------
   const [apiData, setApiData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // 2.1 Fetch with AbortController and Cleanup Function
+  // 1 Fetch with AbortController and Cleanup Function
   useEffect(() => {
     const controller = new AbortController();
 
@@ -282,25 +282,25 @@ function MasterReactApp() {
 
     fetchSampleData();
 
-    // 2.3 Effect Cleanup
+    // 2 Effect Cleanup
     return () => controller.abort();
   }, []);
 
   // --------------------------------------------------------------------------
-  // TOPIC 3: CONTEXT CONSUMPTION
+  // CONTEXT CONSUMPTION
   // --------------------------------------------------------------------------
   const { theme, toggleTheme } = useTheme();
 
   // --------------------------------------------------------------------------
-  // TOPIC 4: FORMS & EVENT HANDLING
+  // FORMS & EVENT HANDLING
   // --------------------------------------------------------------------------
-  // 4.1 Universal Input Change Handler
+  // 1 Universal Input Change Handler
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 4.2 Form Submit Handler with Validation
+  // 2 Form Submit Handler with Validation
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Stop page reload
 
@@ -319,9 +319,9 @@ function MasterReactApp() {
   };
 
   // --------------------------------------------------------------------------
-  // TOPIC 10: PERFORMANCE OPTIMIZATION (USECALLBACK & USEMEMO)
+  // ERFORMANCE OPTIMIZATION (USECALLBACK & USEMEMO)
   // --------------------------------------------------------------------------
-  // 10.3 useCallback gives stable references to handlers passed down to React.memo children
+  // 1 useCallback gives stable references to handlers passed down to React.memo children
   const handleToggleTask = useCallback((id) => {
     dispatch({ type: "TOGGLE_TASK", payload: id });
   }, []);
@@ -330,7 +330,7 @@ function MasterReactApp() {
     dispatch({ type: "DELETE_TASK", payload: id });
   }, []);
 
-  // 10.2 useMemo caches expensive array filtering operations
+  // 2 useMemo caches expensive array filtering operations
   const filteredTasks = useMemo(() => {
     return taskState.tasks.filter((task) => {
       if (filter === "active") return !task.completed;
@@ -340,12 +340,12 @@ function MasterReactApp() {
   }, [taskState.tasks, filter]);
 
   // --------------------------------------------------------------------------
-  // TOPIC 12: PORTAL MODAL STATE
+  // PORTAL MODAL STATE
   // --------------------------------------------------------------------------
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // --------------------------------------------------------------------------
-  // TOPIC 1: JSX LAYOUT & DYNAMIC STYLING
+  // JSX LAYOUT & DYNAMIC STYLING
   // --------------------------------------------------------------------------
   return (
     <div
@@ -366,7 +366,7 @@ function MasterReactApp() {
         Render count: {renderCounterRef.current} | {savedPreference}
       </p>
 
-      {/* TOPIC 3 CONTROL */}
+      {/* CONTROL */}
       <button
         onClick={toggleTheme}
         style={{ padding: "6px 12px", marginBottom: "16px", cursor: "pointer" }}
@@ -374,7 +374,7 @@ function MasterReactApp() {
         Toggle Theme Context (Current: {theme})
       </button>
 
-      {/* TOPIC 4: CONTROLLED FORM */}
+      {/* CONTROLLED FORM */}
       <form onSubmit={handleFormSubmit} style={{ marginBottom: "20px" }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "8px" }}>
           <input
@@ -412,7 +412,7 @@ function MasterReactApp() {
         )}
       </form>
 
-      {/* TOPIC 9: DIRECT DOM ACTION */}
+      {/* DIRECT DOM ACTION */}
       <button
         onClick={() => inputRef.current.focus()}
         style={{ marginBottom: "16px", cursor: "pointer" }}
@@ -420,7 +420,7 @@ function MasterReactApp() {
         Focus Input via useRef
       </button>
 
-      {/* TOPIC 1: FILTER BUTTONS */}
+      {/* FILTER BUTTONS */}
       <div style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
         {["all", "active", "completed"].map((type) => (
           <button
@@ -441,7 +441,7 @@ function MasterReactApp() {
         ))}
       </div>
 
-      {/* TOPIC 8 & 10: MEMOIZED LIST RENDERING */}
+      {/* MEMOIZED LIST RENDERING */}
       <ul style={{ listStyle: "none", padding: 0 }}>
         {filteredTasks.length === 0 ? (
           <p style={{ fontStyle: "italic", opacity: 0.6 }}>
@@ -459,7 +459,7 @@ function MasterReactApp() {
         )}
       </ul>
 
-      {/* TOPIC 2: API DATA RENDERING */}
+      {/* API DATA RENDERING */}
       <div
         style={{
           borderTop: "1px solid #ccc",
@@ -475,7 +475,7 @@ function MasterReactApp() {
         )}
       </div>
 
-      {/* TOPIC 11 & 12 EXAMPLES */}
+      {/* EXAMPLES */}
       <div
         style={{
           borderTop: "1px solid #ccc",
@@ -497,7 +497,7 @@ function MasterReactApp() {
         </ErrorBoundary>
       </div>
 
-      {/* TOPIC 12: PORTAL MODAL */}
+      {/* PORTAL MODAL */}
       <ModalPortal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h3>React Portal Active</h3>
         <p>

@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 // ==========================================
-// SUBTOPIC 12.1: CREATEPORTAL FOR MODALS & OVERLAYS
+// CREATEPORTAL FOR MODALS & OVERLAYS
 // ==========================================
 function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;

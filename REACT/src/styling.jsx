@@ -1,14 +1,13 @@
-import React from "react";
-// Import CSS Modules scoped object
+// * Import CSS Modules scoped object
 import styles from "./stylingModule.css";
 
 export default function StylingTopic() {
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h2>6. Styling Masterclass</h2>
+      <h2>Styling Masterclass</h2>
 
       {/* ==========================================
-          SUBTOPIC 6.1: CSS MODULES
+          CSS MODULES
           ========================================== */}
       <section style={{ marginBottom: "20px" }}>
         <h3>CSS Modules (Scoped Classes)</h3>
@@ -17,7 +16,7 @@ export default function StylingTopic() {
       </section>
 
       {/* ==========================================
-          SUBTOPIC 6.2: TAILWIND CSS (UTILITY CLASSES)
+          TAILWIND CSS (UTILITY CLASSES)
           ========================================== */}
       <section>
         <h3>Tailwind CSS (Utility-First)</h3>

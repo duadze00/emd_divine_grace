@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function FormsTopic() {
   // ==========================================
-  // SUBTOPIC 4.1: MULTI-INPUT FORM STATE
+  // MULTI-INPUT FORM STATE
   // ==========================================
   // Use a single object state to manage multiple fields cleanly.
   const [formData, setFormData] = useState({
@@ -13,12 +13,12 @@ export default function FormsTopic() {
   });
 
   // ==========================================
-  // SUBTOPIC 4.2: FORM VALIDATION STATE
+  // FORM VALIDATION STATE
   // ==========================================
   const [errors, setErrors] = useState({});
 
   // ==========================================
-  // SUBTOPIC 4.3: UNIVERSAL INPUT HANDLER
+  // UNIVERSAL INPUT HANDLER
   // ==========================================
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -40,7 +40,7 @@ export default function FormsTopic() {
   };
 
   // ==========================================
-  // SUBTOPIC 4.4: FORM SUBMISSION & PREVENT DEFAULT
+  // FORM SUBMISSION & PREVENT DEFAULT
   // ==========================================
   const handleSubmit = (e) => {
     e.preventDefault(); // Stop standard HTML page reload

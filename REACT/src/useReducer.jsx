@@ -1,9 +1,9 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 
 // When state logic becomes complex (multiple actions affecting the same state, or states depending on each other), useReducer is cleaner and easier to scale than multiple useState calls.
 
 // ==========================================
-// SUBTOPIC 8.1: REDUCER FUNCTION & ACTION TYPES
+// REDUCER FUNCTION & ACTION TYPES
 // ==========================================
 // Reducers are pure functions: (current state, action) => new state.
 const initialState = { count: 0, step: 1, error: null };
@@ -25,13 +25,13 @@ function reducer(state, action) {
 
 export default function UseReducerTopic() {
   // ==========================================
-  // SUBTOPIC 8.2: HOOK INITIALIZATION & DISPATCHING
+  // HOOK INITIALIZATION & DISPATCHING
   // ==========================================
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h2>8. useReducer Masterclass</h2>
+      <h2>useReducer Masterclass</h2>
       <p>
         Count: <strong>{state.count}</strong> (Step: {state.step})
       </p>

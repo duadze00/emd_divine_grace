@@ -10,7 +10,7 @@ export default function ReactLoopsMasterclass() {
   ]);
 
   // ==========================================
-  // LOOP PATTERN 1: STANDARD FOR LOOP (OUTSIDE JSX)
+  // STANDARD FOR LOOP (OUTSIDE JSX)
   // ==========================================
   // Use case: Creating JSX elements imperatively before returning layout markup.
   const renderStarRating = (count) => {
@@ -32,7 +32,7 @@ export default function ReactLoopsMasterclass() {
   };
 
   // ==========================================
-  // LOOP PATTERN 2: WHILE LOOP (OUTSIDE JSX)
+  // WHILE LOOP (OUTSIDE JSX)
   // ==========================================
   // Use case: Running a loop until a specific condition is met before rendering.
   const renderStepCounters = () => {
@@ -61,7 +61,7 @@ export default function ReactLoopsMasterclass() {
   };
 
   // ==========================================
-  // LOOP PATTERN 3: FOR...OF LOOP (OUTSIDE JSX)
+  // FOR...OF LOOP (OUTSIDE JSX)
   // ==========================================
   // Use case: Accumulating calculated data or total values outside JSX.
   const calculateTotalValue = () => {
@@ -94,7 +94,7 @@ export default function ReactLoopsMasterclass() {
       <h2>React Loops Masterclass</h2>
 
       {/* --------------------------------------------------------------------------
-          LOOP PATTERN 4: ARRAY.MAP() (THE STANDARD REACT WAY INSIDE JSX)
+          ARRAY.MAP() (THE STANDARD REACT WAY INSIDE JSX)
           --------------------------------------------------------------------------
           - Used because .map() produces an expression (returns a new array).
           - CRITICAL: Always pass a unique 'key' prop (e.g., product.id).
@@ -123,7 +123,7 @@ export default function ReactLoopsMasterclass() {
       </section>
 
       {/* --------------------------------------------------------------------------
-          LOOP PATTERN 5: CHAINING .FILTER() AND .MAP() (CONDITIONAL LOOPING)
+          CHAINING .FILTER() AND .MAP() (CONDITIONAL LOOPING)
           --------------------------------------------------------------------------
           - Filters the array first, then loops over only the matching items.
       -------------------------------------------------------------------------- */}
@@ -154,7 +154,7 @@ export default function ReactLoopsMasterclass() {
       </section>
 
       {/* --------------------------------------------------------------------------
-          LOOP PATTERN 6: RENDERING PRE-BUILT LOOPS (HELPER FUNCTIONS)
+          RENDERING PRE-BUILT LOOPS (HELPER FUNCTIONS)
           -------------------------------------------------------------------------- */}
       <section style={{ borderTop: "1px solid #e5e7eb", paddingTop: "16px" }}>
         <h3>3. Displaying Helper Function Loops</h3>

@@ -1,13 +1,13 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 // ==========================================
-// SUBTOPIC 3.1: CREATING THE CONTEXT
+// CREATING THE CONTEXT
 // ==========================================
 // Context lets components share state deep in the tree without "prop drilling".
 const ThemeContext = createContext(null);
 
 // ==========================================
-// SUBTOPIC 3.2: CONTEXT PROVIDER COMPONENT
+// CONTEXT PROVIDER COMPONENT
 // ==========================================
 // Wraps child components and provides the state value.
 export function ThemeProvider({ children }) {
@@ -25,7 +25,7 @@ export function ThemeProvider({ children }) {
 }
 
 // ==========================================
-// SUBTOPIC 3.3: CUSTOM HOOK FOR CONSUMING CONTEXT
+// CUSTOM HOOK FOR CONSUMING CONTEXT
 // ==========================================
 // Job-ready pattern: Always expose a custom hook to consume context safely.
 export function useTheme() {
@@ -37,7 +37,7 @@ export function useTheme() {
 }
 
 // ==========================================
-// SUBTOPIC 3.4: CONSUMING CONTEXT IN DEEP CHILD COMPONENTS
+// CONSUMING CONTEXT IN DEEP CHILD COMPONENTS
 // ==========================================
 function DeepNestedButton() {
   const { theme, toggleTheme } = useTheme();
@@ -64,7 +64,7 @@ export default function ContextTopic() {
   return (
     <ThemeProvider>
       <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-        <h2>3. Context API Masterclass</h2>
+        <h2>Context API Masterclass</h2>
         <p>This button consumes global state without receiving props!</p>
         <DeepNestedButton />
       </div>
