@@ -1,6 +1,7 @@
 // * FOR IMAGES INSIDE src/assets:
 import adwoa from "../assets/adwoa.jpg";
 
+// * USING IMAGE:
 <img src={adwoa} alt="Adwoa" />;
 
 // * FOR IMAGES INSIDE public:
