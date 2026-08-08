@@ -1,13 +1,17 @@
-class Car {
-  constructor(name) {
-    this.name = name;
+class ProfileClass extends Component {
+  // Method utilizing component props
+  getGreeting() {
+    return `Welcome back, ${this.props.user.name}`;
   }
-  start() {
-    return <h1>{this.name} has started.</h1>;
-  }
-  stop() {
-    return <h1>{this.name} has stopped.</h1>;
+
+  render() {
+    return (
+      <div>
+        <h2>{this.getGreeting()}</h2>
+        <p>Account Type: {this.props.user.tier}</p>
+      </div>
+    );
   }
 }
 
-export default Car;
+export default ProfileClass;

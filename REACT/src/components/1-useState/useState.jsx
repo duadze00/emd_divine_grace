@@ -68,7 +68,7 @@ export default function UseStateTopic() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <h2>1. useState Masterclass</h2>
+      <h2>useState Masterclass</h2>
 
       {/* Output */}
       <section style={{ marginBottom: "16px" }}>
