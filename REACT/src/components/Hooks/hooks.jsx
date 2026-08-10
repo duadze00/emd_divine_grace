@@ -11,13 +11,12 @@ import React, {
 
 /*
 * WHAT ARE HOOKS?
-Hooks are special functions provided by React that allow
-functional components to use state and other React features.
+Hooks are special functions provided by React that allow functional components to use state and other React features.
 
 * RULES OF HOOKS:
-1. Only call Hooks at the TOP LEVEL (not inside loops, conditions, or nested functions).
+1. Only call Hooks at the TOP LEVEL (not inside loops, conditions or nested functions).
 2. Only call Hooks from React functional components or Custom Hooks.
-3. Custom Hooks must start with "use" (e.g., useFetch, useLocalStorage).
+3. Custom Hooks must start with "use" (e.g. useFetch, useLocalStorage).
 
 ========================================================
 PART 1: BASIC HOOKS

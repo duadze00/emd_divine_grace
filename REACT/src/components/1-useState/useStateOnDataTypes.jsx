@@ -46,7 +46,7 @@ export function CanBeAnything() {
   );
 }
 
-// * STATE SETTER CAN UPDATE ANY TYPE
+// * STATE SETTER CAN UPDATE ANY DATA TYPE
 Number;
 const [age, setAge] = useState(20);
 setAge(21);
