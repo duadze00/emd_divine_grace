@@ -21,3 +21,7 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+//* NOTE:
+// A leading / means "start from the root. Eg. <Link to="/about">About</Link>"
+// No leading / means "relative to where I currently am. Eg. <Link to="profile">Profile</Link>"
