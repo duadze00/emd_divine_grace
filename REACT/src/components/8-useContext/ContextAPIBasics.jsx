@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { data } from '../../data';
+import { useState, useContext } from "react";
+import { data } from "../../data";
 // more components
 // fix - context api, redux (for more complex cases)
 
@@ -37,7 +37,7 @@ const SinglePerson = ({ id, name }) => {
   const { removePerson } = useContext(PersonContext);
 
   return (
-    <div className='item'>
+    <div className="item">
       <h4>{name}</h4>
       <button onClick={() => removePerson(id)}>remove</button>
     </div>
