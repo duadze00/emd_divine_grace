@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #0b0d19; /* Rich dark base prevents muddy washing out */
+  background-image:
+    radial-gradient(circle at 15% 20%, #ff2a85 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, #00f2fe 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #7b2cbf 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, #ff8c00 0%, transparent 45%),
+    radial-gradient(circle at 20% 85%, #4facfe 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #12002b;
+  background-image:
+    radial-gradient(circle at 10% 20%, #ff4b2b 0%, transparent 50%),
+    radial-gradient(circle at 90% 10%, #ff416c 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, #8a2be2 0%, transparent 50%),
+    radial-gradient(circle at 80% 85%, #f7b733 0%, transparent 35%),
+    radial-gradient(circle at 20% 70%, #6a11cb 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #070913;
+  background-image:
+    radial-gradient(circle at 25% 25%, #3a7bd5 0%, transparent 45%),
+    radial-gradient(circle at 75% 25%, #00d2ff 0%, transparent 40%),
+    radial-gradient(circle at 50% 70%, #6c5ce7 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, #a29bfe 0%, transparent 35%);
+  background-attachment: fixed;
+}
+
+#root {
+  width: min(500px, 90%);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+input {
+  width: 80%;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+
+  cursor: pointer;
+}
+
+ul {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 1rem 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.75rem;
+
+  border-radius: 10px;
+}
+
+ul li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.clear {
+  display: block;
+  margin: auto;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background: #ff2a85;
+}
+
+.empty-state {
+  text-align: center;
+  margin: 1rem auto;
+}
