@@ -15,6 +15,7 @@ function Login() {
     
     // You can also do: navigate(1);
     // which means: Go forward one page.
+    
     // You can think of:
     // navigate("/about");
   }

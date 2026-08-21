@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useReducer, use } from "react";
 
-// ============================================================================
-// LEVEL 1: THE CORE PROBLEM (PROP DRILLING VS. CONTEXT)
-// ============================================================================
+//* ============================================================================
+//* LEVEL 1: THE CORE PROBLEM (PROP DRILLING VS. CONTEXT)
+//* ============================================================================
 
 // Before using Context, understand WHY we need it.
 // In traditional React, passing data deep down requires "Prop Drilling":
@@ -28,9 +28,9 @@ import { createContext, useContext, useState, useReducer, use } from "react";
 //                UserCard
 //              (useContext)
 
-// ============================================================================
-// LEVEL 2: BASIC CONTEXT (THE 3-STEP FOUNDATION)
-// ============================================================================
+//* ============================================================================
+//* LEVEL 2: BASIC CONTEXT (THE 3-STEP FOUNDATION)
+//* ============================================================================
 
 // Context has 3 main building blocks:
 // 1. createContext() -> Creates the channel
@@ -45,9 +45,15 @@ function BasicLevelExample() {
   const user = { name: "Eric", age: 25 };
 
   return (
-    <BasicUserContext.Provider value={user}>
-      <BasicDashboard />
-    </BasicUserContext.Provider>
+    <>
+      <BasicUserContext.Provider value={user}>
+        <BasicDashboard />
+      </BasicUserContext.Provider>
+      //* NB: The above is same as the below:
+      <BasicUserContext value={user}>
+        <BasicDashboard />
+      </BasicUserContext>
+    </>
   );
 }
 
@@ -63,6 +69,8 @@ function BasicProfile() {
 // Step 3: Consume the Data directly
 function BasicUserCard() {
   const user = useContext(BasicUserContext);
+  //* NB: user can also be destructured:
+  const { name, id } = useContext(BasicUserContext);
 
   return (
     <div>
@@ -73,9 +81,9 @@ function BasicUserCard() {
   );
 }
 
-// ============================================================================
-// LEVEL 3: DYNAMIC CONTEXT (PAIRING WITH STATE)
-// ============================================================================
+//* ============================================================================
+//* LEVEL 3: DYNAMIC CONTEXT (PAIRING WITH STATE)
+//* ============================================================================
 
 // Very Important Concept:
 // Context API by itself is NOT state management—it is a distribution pipeline.
@@ -110,9 +118,9 @@ function DynamicProfile() {
   );
 }
 
-// ============================================================================
-// LEVEL 4: PRODUCTION PATTERN — CUSTOM PROVIDER & CUSTOM HOOK
-// ============================================================================
+//* ============================================================================
+//* LEVEL 4: PRODUCTION PATTERN — CUSTOM PROVIDER & CUSTOM HOOK
+//* ============================================================================
 
 // In real-world projects, developers do NOT call useContext(RawContext) directly.
 // Instead, they combine the Context, Provider, and Hook into a reusable pattern:
@@ -175,9 +183,9 @@ function HeaderComponent() {
   );
 }
 
-// ============================================================================
-// LEVEL 5: MULTIPLE SEPARATE CONTEXTS & ARCHITECTURE
-// ============================================================================
+//* ============================================================================
+//* LEVEL 5: MULTIPLE SEPARATE CONTEXTS & ARCHITECTURE
+//* ============================================================================
 
 // Rule of thumb in large applications:
 // DO NOT PUT EVERYTHING IN ONE MONOLITHIC CONTEXT!
@@ -232,9 +240,9 @@ function useCart() {
   return context;
 }
 
-// ============================================================================
-// LEVEL 6: ADVANCED — CONTEXT + USEREDUCER (MINI REDUX PATTERN)
-// ============================================================================
+//* ============================================================================
+//* LEVEL 6: ADVANCED — CONTEXT + USEREDUCER (MINI REDUX PATTERN)
+//* ============================================================================
 
 // For complex global state changes, pair Context with useReducer:
 //
@@ -309,9 +317,9 @@ function ShoppingCartWithReducer() {
   );
 }
 
-// ============================================================================
-// LEVEL 7: MODERN REACT 19 MODERNIZATIONS
-// ============================================================================
+//* ============================================================================
+//* LEVEL 7: MODERN REACT 19 MODERNIZATIONS
+//* ============================================================================
 
 // In React 19+:
 // 1. You can render <Context value={...}> directly without .Provider
@@ -325,9 +333,9 @@ function ModernChild() {
   return <p>Modern React 19 Feature: {value}</p>;
 }
 
-// ============================================================================
-// FULL COMBINED EXECUTABLE ENTRY POINT
-// ============================================================================
+//* ============================================================================
+//* FULL COMBINED EXECUTABLE ENTRY POINT
+//* ============================================================================
 
 export default function App() {
   return (

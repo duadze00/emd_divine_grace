@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import useLocalStorage from "./hooks/useLocalStorage.jsx";
-import HeaderStats from "./components/HeaderStats.jsx";
-import TaskForm from "./components/TaskForm.jsx";
-import TaskItem from "./components/TaskItem.jsx";
+import HeaderStats from "./TodoWithCustomHook And useState/HeaderStats.js";
+import TaskForm from "./TodoWithCustomHook And useState/TaskForm.js";
+import TaskItem from "./TodoWithCustomHook And useState/TaskItem.jsx";
 import "./styles/App.css";
 
 function App() {

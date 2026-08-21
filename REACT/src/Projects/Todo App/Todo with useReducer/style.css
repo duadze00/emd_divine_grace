@@ -1,0 +1,598 @@
+/* =========================================================
+   TODO MANAGER — RESPONSIVE MODERN UI
+   ========================================================= */
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at top left, #00eeff 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #003cff 0%, transparent 40%),
+    linear-gradient(135deg, #071a52, #073b91, #081c4f);
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   MAIN APP CONTAINER
+   ========================================================= */
+
+#root {
+  width: min(100%, 650px);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+h1 {
+  margin-bottom: 0.35rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.04em;
+  background: linear-gradient(90deg, #ffffff, #a7f3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+form {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.75rem 0;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  outline: none;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+form input:focus {
+  border-color: #00eeff;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 0 0 3px rgba(0, 238, 255, 0.15),
+    0 0 20px rgba(0, 238, 255, 0.1);
+}
+
+/* =========================================================
+   ALL BUTTONS
+   ========================================================= */
+
+button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(0, 238, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+form button {
+  background: linear-gradient(135deg, #00d9ff, #0077ff);
+  box-shadow: 0 8px 20px rgba(0, 119, 255, 0.3);
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #22e3ff, #1684ff);
+  box-shadow: 0 10px 25px rgba(0, 119, 255, 0.4);
+}
+
+/* =========================================================
+   TODO CONTAINER
+   ========================================================= */
+
+.item_container {
+  width: 100%;
+}
+
+/* =========================================================
+   TODO LIST
+   ========================================================= */
+
+ul {
+  width: 100%;
+  max-height: 330px;
+  padding-right: 0.35rem;
+  list-style: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
+
+ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+ul::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   TODO ITEM
+   ========================================================= */
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* =========================================================
+   TODO TEXT
+   ========================================================= */
+
+.completed,
+.uncompleted {
+  flex: 1;
+  min-width: 0;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease,
+    text-decoration 0.25s ease;
+}
+
+/* =========================================================
+   COMPLETED TODO
+   ========================================================= */
+
+.completed {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+/* =========================================================
+   UNCOMPLETED TODO
+   ========================================================= */
+
+.uncompleted {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* =========================================================
+   BUTTON CONTAINER
+   ========================================================= */
+
+.btn_container {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+.btn_container button:first-child {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.btn_container button:first-child:hover {
+  background: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+}
+
+/* =========================================================
+   COMPLETED BUTTON
+   ========================================================= */
+
+.btn_container button:nth-child(2) {
+  background: rgba(0, 238, 255, 0.15);
+  border: 1px solid rgba(0, 238, 255, 0.25);
+}
+
+.btn_container button:nth-child(2):hover {
+  background: rgba(0, 238, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 238, 255, 0.15);
+}
+
+/* =========================================================
+   REMOVE BUTTON
+   ========================================================= */
+
+.btn_container button:last-child {
+  background: rgba(255, 70, 90, 0.15);
+  border: 1px solid rgba(255, 70, 90, 0.2);
+}
+
+.btn_container button:last-child:hover {
+  background: rgba(255, 70, 90, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 70, 90, 0.2);
+}
+
+/* =========================================================
+   EMPTY STATE IMAGE
+   ========================================================= */
+
+.item_container > img {
+  display: block;
+  width: min(70%, 280px);
+  height: auto;
+  margin: 2rem auto;
+  opacity: 0.8;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+
+  #root {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+  body {
+    align-items: flex-start;
+    padding: 1rem;
+    padding-top: 2rem;
+  }
+
+  #root {
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  form input {
+    width: 100%;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  ul {
+    max-height: 400px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .completed,
+  .uncompleted {
+    width: 100%;
+  }
+
+  .btn_container {
+    width: 100%;
+  }
+
+  .btn_container button {
+    flex: 1;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 350px) {
+  body {
+    padding: 0.6rem;
+  }
+
+  #root {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .btn_container {
+    flex-direction: column;
+  }
+
+  .btn_container button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   EDIT MODAL
+   ========================================================= */
+
+.modal_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.edit_modal {
+  width: min(100%, 450px);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 41, 80, 0.95),
+    rgba(7, 29, 70, 0.95)
+  );
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: modalIn 0.25s ease;
+}
+
+/* =========================================================
+   MODAL TITLE
+   ========================================================= */
+
+.edit_modal h2 {
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MODAL INPUT
+   ========================================================= */
+
+.edit_modal input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  outline: none;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit_modal input:focus {
+  border-color: #00eeff;
+  box-shadow: 0 0 0 3px rgba(0, 238, 255, 0.15);
+}
+
+/* =========================================================
+   MODAL BUTTONS
+   ========================================================= */
+
+.modal_buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.cancel_button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cancel_button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.save_button {
+  background: linear-gradient(135deg, #00d9ff, #0077ff);
+  box-shadow: 0 8px 20px rgba(0, 119, 255, 0.25);
+}
+
+.save_button:hover {
+  background: linear-gradient(135deg, #22e3ff, #1684ff);
+}
+
+/* =========================================================
+   MODAL ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MOBILE MODAL
+   ========================================================= */
+
+@media (max-width: 500px) {
+  .edit_modal {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .modal_buttons {
+    flex-direction: column-reverse;
+  }
+
+  .modal_buttons button {
+    width: 100%;
+  }
+}
