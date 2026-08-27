@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production-Ready Navigation Guide</title>
+    <style>
+      :root {
+        --primary: #2563eb;
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --text: #0f172a;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 2rem;
+      }
+      nav {
+        background: var(--surface);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background 0.2s;
+      }
+      .nav-links a.active {
+        background-color: var(--primary);
+        color: white;
+      }
+      .card {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+      }
+      button {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+      .code-output {
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 1rem;
+        border-radius: 6px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Accessible Navigation Component -->
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="/" class="spa-link active" data-route="home">Home</a></li>
+        <li>
+          <a href="/dashboard" class="spa-link" data-route="dashboard"
+            >Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="/settings" class="spa-link" data-route="settings"
+            >Settings</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- App View Container (SPA Target) -->
+    <main id="app-view" class="card">
+      <h2>Welcome Home</h2>
+      <p>This content changes dynamically without refreshing the page.</p>
+    </main>
+
+    <!-- Traditional Location API Interactive Playground -->
+    <section class="card">
+      <h3>1. The Traditional Location API (`window.location`)</h3>
+      <p>
+        Use these for absolute external redirects, refreshing, or reading URL
+        parameters.
+      </p>
+      <button id="btn-parse-url">Inspect Current URL Data</button>
+      <button id="btn-redirect">Redirect to Google</button>
+      <button id="btn-replace">Replace History (Login Simulation)</button>
+
+      <div id="url-output" class="code-output">
+        Click "Inspect Current URL Data" to run the parser.
+      </div>
+    </section>
+
+    <!-- Programmatic SPA Navigation Playground -->
+    <section class="card">
+      <h3>2. Programmatic SPA Navigation</h3>
+      <p>
+        Simulate clicking links using pure JavaScript code (essential for
+        redirecting after a successful form submission or authentication check).
+      </p>
+      <button id="btn-go-settings">Go to Settings via Code</button>
+      <button id="btn-go-back">Go Back (History Native)</button>
+    </section>
+
+    <script src="../JAVASCRIPT/APINavigation.js"></script>
+  </body>
+</html>

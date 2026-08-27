@@ -1,10 +1,10 @@
-/**
+/*
  * ============================================================================
  * MODERN JAVASCRIPT FILEREADER
  * ============================================================================
  */
 
-// STEPS FOR USING FILEREADER
+//* STEPS FOR USING FILEREADER
 /**
 Create FileReader
        ↓
@@ -15,7 +15,7 @@ Wait until it finishes
 Use the result
  */
 
-// 1. CORE UTILITY: THE ASYNC/AWAIT FILEREADER WRAPPERS
+//* 1. CORE UTILITY: THE ASYNC/AWAIT FILEREADER WRAPPERS
 // By default, FileReader uses old-school event listeners (onload, onerror).
 // Wrapping them in Promises allows us to use modern 'async/await' syntax.
 
@@ -63,7 +63,7 @@ function readFileAsText(file) {
   });
 }
 
-// 2. ADVANCED FILE VALIDATOR
+//* 2. ADVANCED FILE VALIDATOR
 // Never trust user input. Always validate file type and size *before* reading it into memory.
 function validateFile(file, allowedTypes, maxSizeInMB) {
   const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
@@ -90,7 +90,7 @@ function validateFile(file, allowedTypes, maxSizeInMB) {
   return true; // File passed all security checks
 }
 
-// 3. REAL-WORLD APPLICATION IMPLEMENTATION
+//* REAL-WORLD APPLICATION IMPLEMENTATION
 
 // Select your DOM elements
 const singleInput = document.querySelector("#singleFileInput");
@@ -98,7 +98,7 @@ const multipleInput = document.querySelector("#multipleFileInput");
 const imagePreview = document.querySelector("#previewImage");
 const textDisplay = document.querySelector("#textDisplay");
 
-/**
+/*
  * SCENARIO A: Single Image Upload with Persistent LocalStorage Caching
  */
 singleInput.addEventListener("change", async (event) => {
@@ -131,7 +131,7 @@ singleInput.addEventListener("change", async (event) => {
   }
 });
 
-/**
+/*
  * SCENARIO B: Processing Multiple Files Simultaneously (Parallel execution)
  */
 multipleInput.addEventListener("change", async (event) => {
@@ -198,7 +198,7 @@ async function readLargeFileInChunks(file) {
   console.log("Entire large file processed successfully!");
 }
 
-/**
+/*
  * ============================================================================
  * JAVASCRIPT MEMORY ARCHITECTURE: FILEREADER VS. OBJECT URL
  * ============================================================================

@@ -1,8 +1,8 @@
 // URL.createObjectURL() is a static method that takes a File, Blob (Binary Large Object), or MediaSource object and generates a unique, temporary URL string (starting with blob:). This URL represents the specific object in memory and allows you to use it just like a regular web URL (e.g., as the src of an <img> tag or the href of an <a> tag) without needing to upload the file to a server first.
 
-// ==========================================
-// 1. BASIC USAGE OF URL.createObjectURL()
-// ==========================================
+//* ==========================================
+//* 1. BASIC USAGE OF URL.createObjectURL()
+//* ==========================================
 
 // Assume 'fileFromInput' is a File object obtained from an <input type="file">
 function handleFileSelection(fileFromInput) {
@@ -18,9 +18,9 @@ function handleFileSelection(fileFromInput) {
   return objectURL;
 }
 
-// ==========================================
-// 2. CRITICAL CONCEPT: MEMORY MANAGEMENT (URL.revokeObjectURL)
-// ==========================================
+//* ============================================================
+//* 2. CRITICAL CONCEPT: MEMORY MANAGEMENT (URL.revokeObjectURL)
+//* ============================================================
 
 function cleanupObjectURL(objectURL) {
   /**
@@ -36,9 +36,9 @@ function cleanupObjectURL(objectURL) {
   console.log("Memory freed for URL:", objectURL);
 }
 
-// ==========================================
-// 3. RELATED CONCEPTS & ALTERNATIVES
-// ==========================================
+//* ==========================================
+//* 3. RELATED CONCEPTS & ALTERNATIVES
+//* ==========================================
 
 /**
  * RELATED CONCEPT 2: Blobs and Files

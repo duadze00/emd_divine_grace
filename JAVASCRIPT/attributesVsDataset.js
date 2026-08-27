@@ -11,7 +11,8 @@
 const sampleElement = document.createElement("div");
 sampleElement.id = "app-root";
 
-/* ============================================================================
+/*
+ * ============================================================================
  * GROUP 1: TRADITIONAL HTML ATTRIBUTES
  * ============================================================================
  * Core Concept: Attributes describe the element itself and configure how the
@@ -41,7 +42,8 @@ if (img.hasAttribute("alt")) {
 img.removeAttribute("alt");
 console.log("Has alt after removal?", img.hasAttribute("alt")); // Output: false
 
-/* ============================================================================
+/*
+ * ============================================================================
  * GROUP 2: CUSTOM DATA ATTRIBUTES & THE DATASET OBJECT
  * ============================================================================
  * Core Concept: Custom data attributes use the prefix "data-*". The browser
@@ -78,7 +80,8 @@ userBtn.dataset.country = "Germany";
 console.log("Updated Country:", userBtn.dataset.country); // Output: Germany
 // Behind the scenes, the HTML has automatically changed to: data-country="Germany"
 
-/* ============================================================================
+/*
+ * ============================================================================
  * GROUP 3: THE HYPHEN-TO-CAMELCASE CONVERSION RULE
  * ============================================================================
  * Core Concept: HTML attributes are case-insensitive and separate words with
@@ -106,7 +109,8 @@ console.log("accountNumber:", complexCard.dataset.accountNumber); // Output: 998
 complexCard.dataset.premiumUserStatus = "active";
 // HTML Output: data-premium-user-status="active"
 
-/* ============================================================================
+/*
+ * ============================================================================
  * GROUP 4: ADVANCED DATASET MANIPULATION (LOOPS & DELETION)
  * ============================================================================
  */
@@ -124,7 +128,8 @@ delete userBtn.dataset.name;
 console.log("After deleting name:", userBtn.dataset.name); // Output: undefined
 // The element's HTML no longer contains the data-name attribute.
 
-/* ============================================================================
+/*
+ * ============================================================================
  * GROUP 5: THE CRITICAL TRAP - EVERY VALUE IS A STRING!
  * ============================================================================
  * Core Concept: HTML reads everything as text. Even if you put numbers or
@@ -152,7 +157,8 @@ const isAdminMode = systemConfig.dataset.isAdminMode === "true"; // Explicitly c
 console.log("Fixed Number Type:", typeof maxConnections); // Output: number
 console.log("Fixed Boolean Type:", typeof isAdminMode); // Output: boolean
 
-/* ============================================================================
+/*
+ * ============================================================================
  * GROUP 6: REAL-WORLD IMPLEMENTATION EXAMPLE (E-COMMERCE DATA SYSTEM)
  * ============================================================================
  * Below is a realistic script showing how an e-commerce catalog page handles
@@ -207,7 +213,8 @@ button.click();
 
 const element = document.createElement("div");
 
-/* ============================================================================
+/*
+ * ============================================================================
  * 1. UNEXPECTED BEHAVIOR: ULTRALIGHT MEMORY SYNCING
  * ============================================================================
  * Changing a data attribute via `dataset` OR `setAttribute` updates the exact
@@ -227,7 +234,8 @@ element.setAttribute("data-status", "completed");
 // Read using dataset — it updated here too!
 console.log(element.dataset.status); // Output: "completed"
 
-/* ============================================================================
+/*
+ * ============================================================================
  * 2. PERFORMANCE CRITICAL: THE "DOM THRASHING" PROBLEM
  * ============================================================================
  * Every single time you update `element.dataset.something` or `setAttribute`,
@@ -249,7 +257,8 @@ for (let i = 0; i < 1000; i++) {
 }
 element.dataset.index = finalIndex; // Updates the DOM exactly once!
 
-/* ============================================================================
+/*
+ * ============================================================================
  * 3. SECURITY: DOM XSS (CROSS-SITE SCRIPTING) WARNING
  * ============================================================================
  * Because data attributes are visible in the HTML source code, malicious users
@@ -270,7 +279,8 @@ const safeDiv = document.createElement("div");
 safeDiv.textContent = `Welcome, ${element.dataset.username}`;
 console.log("Safe string output:", safeDiv.textContent);
 
-/* ============================================================================
+/*
+ * ============================================================================
  * SUMMARY CHEATSHEET (The ultimate mental model)
  * ============================================================================
  */

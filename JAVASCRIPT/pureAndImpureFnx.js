@@ -3,7 +3,7 @@
 // ======================================================
 
 // PURE --> Same input = Same output
-// PURE --> Same input = Different output
+// IMPURE --> Same input = Different output
 
 // Pure function: Always returns the same output for the same inputs and does not modify anything itself (no side effects).
 

@@ -1,4 +1,4 @@
-// =============== CREATE DATE OBJECT ===============
+//* =============== CREATE DATE OBJECT ===============
 // Date objects are created with the new Date() constructor.
 // There are 4 ways to create a new date object:
 
@@ -40,7 +40,7 @@ console.log(d2);
 const d3 = new Date(0);
 console.log(d3);
 
-// =============== DATE METHODS ===============
+//* =============== GET DATE METHODS ===============
 // METHODS	            DESCRIPTION
 // getFullYear()	    Get the year as a four digit number (yyyy)
 // getMonth()	        Get the month as a number (0-11)
@@ -139,7 +139,7 @@ var d = new Date();
 d.myMethod();
 var monthname = d.myPro;
 
-// =============== UTC DATE METHODS ===============
+//* =============== UTC DATE METHODS ===============
 // UTC date methods are used for working with UTC dates (Universal Time Zone dates)
 
 // METHODS	                DESCRIPTION
@@ -152,7 +152,7 @@ var monthname = d.myPro;
 // getUTCMonth()	          Same as getMonth(), but returns the UTC month
 // getUTCSeconds()	        Same as getSeconds(), but returns the UTC seconds
 
-// =============== SET DATE METHODS ===============
+//* =============== SET DATE METHODS ===============
 // Set Date methods are used for setting a part of a date
 
 // METHODS	                DESCRIPTION

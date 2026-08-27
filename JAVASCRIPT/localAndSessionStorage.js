@@ -1,6 +1,6 @@
-// ==========================================
-// LOCALSTORAGE CHEAT SHEET (Permanent)
-// ==========================================
+//* ==========================================
+//* LOCALSTORAGE CHEAT SHEET (Permanent)
+//* ==========================================
 
 // --- 1. Resetting the playground ---
 localStorage.clear(); // Starts us with a blank slate
@@ -40,9 +40,9 @@ console.log("Theme after removal:", localStorage.getItem("themeMode")); // Outpu
 localStorage.clear(); // Deletes username and isLoggedIn too
 console.log("Storage size after clear:", localStorage.length); // Output: 0
 
-// ====================================================
-// STORING MULTIPLE DATA AND ACCESSING THEIR VALUES
-// ====================================================
+//* ====================================================
+//* STORING MULTIPLE DATA AND ACCESSING THEIR VALUES
+//* ====================================================
 let userName = "Eric";
 let userPassword = 2345;
 let initialDeposit = 500;
@@ -78,9 +78,9 @@ let dataArray = JSON.parse(localStorage.getItem("userData"));
 console.log(dataArray[0]); // Output: Eric
 console.log(dataArray[2]); // Output: 500
 
-// ==========================================
-// SESSIONSTORAGE CHEAT SHEET (Temporary)
-// ==========================================
+//* ==========================================
+//* SESSIONSTORAGE CHEAT SHEET (Temporary)
+//* ==========================================
 
 sessionStorage.clear(); // Clear initial session data
 

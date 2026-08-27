@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mastering DOM Events</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        background: #f4f4f9;
+      }
+      .box {
+        padding: 20px;
+        border: 2px solid #333;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      #grandparent {
+        background-color: #ffcccc;
+      }
+      #parent {
+        background-color: #ccffcc;
+      }
+      #child {
+        background-color: #ccccff;
+        padding: 10px;
+        cursor: pointer;
+      }
+      #button-container {
+        background: #e0e0e0;
+        margin-top: 20px;
+      }
+      button {
+        margin: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1. Event Propagation (Click the blue child box)</h2>
+    <div id="grandparent" class="box">
+      Grandparent
+      <div id="parent" class="box">
+        Parent
+        <div id="child" class="box">Click me to see Propagation!</div>
+      </div>
+    </div>
+
+    <h2>2. Event Delegation (One listener for all buttons)</h2>
+    <div id="button-container" class="box">
+      <button data-action="save">Save File</button>
+      <button data-action="delete">Delete File</button>
+      <button data-action="export">Export File</button>
+    </div>
+
+    <script src="../JAVASCRIPT/eventObject&Delegation.js"></script>
+  </body>
+</html>
