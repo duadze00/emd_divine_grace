@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Verification</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <div class="icon-shield">🔒</div>
+      <h2>Verify Your Identity</h2>
+      <p class="subtitle">
+        Enter the 5-digit code generated below to confirm your login.
+      </p>
+
+      <div class="code-box">
+        <span id="code">------</span>
+      </div>
+
+      <div class="timer-wrapper">
+        <div id="timer-bar" class="timer-bar"></div>
+      </div>
+      <p class="timer-text">Code expires in <span id="time-left">60</span>s</p>
+
+      <div class="input-group">
+        <input
+          type="text"
+          id="verify"
+          placeholder="Enter 5-digit code"
+          maxlength="5"
+          autocomplete="off"
+        />
+        <p id="status-message" class="status-message"></p>
+      </div>
+
+      <button id="resend-btn" class="resend-btn" disabled>Resend Code</button>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
